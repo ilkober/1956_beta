@@ -1964,14 +1964,29 @@ focus_tree = {
 				x = 41
 				y = 5
 				cost = 5
-			
 				available = {
 					is_puppet = no
-					has_army_manpower = { size > 100000 } 		
-				}
+					r56_script_i_am_sane = yes
+					300 = {
+						OWNER = {
+							NOT = {
+								OR = {
+									is_in_faction_with = ROOT
+									is_subject_of = PREV
+								}
+							}
+						}
+					}			
+					510 = { is_controlled_by = ROOT }
+					has_army_manpower = { size > 100000 }
+				}			
 				
 				bypass = {
-					NOT = { country_exists = URG }
+					300 = {
+						OWNER = {
+							r56_script_standard_bypass = yes
+						}				
+					}
 				}
 				
 				cancel = {
@@ -1981,10 +1996,24 @@ focus_tree = {
 				
 				completion_reward = {
 					add_state_claim = 300
-					add_named_threat = { threat = 2 name = ARG_uruguay_claim_threat }
-					URG = {
-						add_opinion_modifier = { target = ARG modifier = arg_claim }
+					random_country = {
+						limit = { owns_state = 300 }
+						add_opinion_modifier = { target = ROOT modifier = arg_claim }
+						ROOT = {
+							create_wargoal = {
+								type = take_core_state
+								target = PREV
+								generator = { 300 }
+							}
+						}
 					}
+					add_named_threat = { threat = 2 name = ARG_uruguay_claim_threat }								
+				}
+
+				completion_reward = {
+					
+					
+
 				}
 				
 		}
