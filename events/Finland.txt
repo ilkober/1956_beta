@@ -1320,7 +1320,11 @@ country_event = {
 		
 		option = {
 			name = finland.45.b
-			annex_country = { target = SWE transfer_troops = yes }
+			create_wargoal = {
+				target = SWE
+				expire = 0
+				type = annex_everything
+			}
 		}
 }
 
@@ -1438,7 +1442,11 @@ country_event = {
 		
 		option = {
 			name = finland.49.b
-			annex_country = { target = NOR transfer_troops = yes }
+			create_wargoal = {
+				target = NOR
+				expire = 0
+				type = annex_everything
+			}
 		}
 }
 
@@ -1556,7 +1564,11 @@ country_event = {
 		
 		option = {
 			name = finland.53.b
-			annex_country = { target = DEN transfer_troops = yes }
+			create_wargoal = {
+				target = DEN
+				expire = 0
+				type = annex_everything
+			}
 		}
 }
 
@@ -1570,6 +1582,11 @@ country_event = {
 
 		option = {
 			name = finland.54.a
+			create_wargoal = {
+				target = DEN
+				expire = 0
+				type = annex_everything
+			}			
 		}
 }
 
