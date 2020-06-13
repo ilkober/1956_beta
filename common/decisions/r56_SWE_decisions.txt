@@ -1,0 +1,14 @@
+SWE_R56_category_1936_elections = {
+	SWE_R56_decision_1936_elections_results = {
+		
+		icon = generic_operation
+		
+		cost = 50
+		
+		days_mission_timeout = 220
+		
+		visible = {
+			tag = SWE
+		}
+	}
+}

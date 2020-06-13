@@ -743,3 +743,23 @@ news.912.d:0"Though Iceland's population is small, and its thirst for independen
 news.912.a:0"How will the Danes respond?"
 news.912.b:0"Good News!"
 news.912.c:0"Outrageous!"
+ 
+ ###---> Political <><> <><> <><>
+ SWE_R56_hansson_majority_gov:0 "Form Left Majority Government"
+ SWE_R56_hansson_majority_gov_desc:0 ""
+ SWE_R56_bagge_minority_gov:0 "Form Right Minority Government"
+ SWE_R56_bagge_minority_gov_desc:0 ""
+ SWE_R56_SKP_coalition_gov:0 "SKP Coalition Government"
+ SWE_R56_SKP_coalition_gov_desc:0 ""
+ SWE_R56_NSAP_coalition_gov:0 "NSAP Coalition Government"
+ SWE_R56_NSAP_coalition_gov_desc:0 ""
+ SWE_R56_king_in_council:0 "The King in Council"
+ SWE_R56_king_in_council_desc:0 ""
+ 
+ ###---> Decisions <><> <><> <><>
+ SWE_R56_category_1936_elections:0 "The 1936 Swedish Elections"
+ SWE_R56_category_1936_elections_desc:0 "It's a thing..."
+ SWE_R56_decision_1936_elections_results:0 "The Election Results"
+ 
+ ###---> Tooltips <><> <><> <><>
+ SWE_R56_1936_elections:0 "The results of the 1936 Swedish general elections have come in."

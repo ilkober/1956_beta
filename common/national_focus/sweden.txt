@@ -2483,9 +2483,90 @@ focus = {
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
 	
+	###---> Political <><> <><> <><>
 	
-
+	focus = {
+		id = SWE_R56_hansson_majority_gov
+		icon = GFX_r56_goal_SWE_hanson_iii_cabinet
+		mutually_exclusive = { focus = SWE_R56_bagge_minority_gov focus = SWE_R56_SKP_coalition_gov focus = SWE_R56_NSAP_coalition_gov focus = SWE_R56_king_in_council }
+		
+		x = 44
+		y = 0
+		cost = 5
+		
+		available = {
+			has_country_flag = SWE_R56_1936_elections
+		}
+		
+		completion_reward = {
+		}
+	}
 	
+	focus = {
+		id = SWE_R56_bagge_minority_gov
+		icon = GFX_r56_goal_SWE_hanson_iii_cabinet
+		mutually_exclusive = { focus = SWE_R56_hansson_majority_gov focus = SWE_R56_SKP_coalition_gov focus = SWE_R56_NSAP_coalition_gov focus = SWE_R56_king_in_council }
+		
+		x = 48
+		y = 0
+		cost = 5
+		
+		available = {
+			has_country_flag = SWE_R56_1936_elections
+		}
+		
+		completion_reward = {
+		}
+	}
 	
+	focus = {
+		id = SWE_R56_SKP_coalition_gov
+		icon = GFX_goal_support_communism
+		mutually_exclusive = { focus = SWE_R56_hansson_majority_gov focus = SWE_R56_bagge_minority_gov focus = SWE_R56_NSAP_coalition_gov focus = SWE_R56_king_in_council }
+		
+		x = 52
+		y = 0
+		cost = 5
+		
+		available = {
+			has_country_flag = SWE_R56_1936_elections
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = SWE_R56_NSAP_coalition_gov
+		icon = GFX_goal_support_fascism
+		mutually_exclusive = { focus = SWE_R56_hansson_majority_gov focus = SWE_R56_bagge_minority_gov focus = SWE_R56_SKP_coalition_gov focus = SWE_R56_king_in_council }
+		
+		x = 56
+		y = 0
+		cost = 5
+		
+		available = {
+			has_country_flag = SWE_R56_1936_elections
+		}
+		
+		completion_reward = {
+		}
+	}
+	
+	focus = {
+		id = SWE_R56_king_in_council
+		icon = GFX_r56_goal_SWE_the_king_in_council
+		mutually_exclusive = { focus = SWE_R56_hansson_majority_gov focus = SWE_R56_bagge_minority_gov focus = SWE_R56_SKP_coalition_gov focus = SWE_R56_NSAP_coalition_gov }
+		
+		x = 60
+		y = 0
+		cost = 5
+		
+		available = {
+			has_country_flag = SWE_R56_1936_elections
+		}
+		
+		completion_reward = {
+		}
+	}
 }
-	

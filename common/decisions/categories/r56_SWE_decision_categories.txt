@@ -1,0 +1,10 @@
+SWE_R56_category_1936_elections = {
+	
+	icon = generic_civil_support
+	
+	priority = 100
+
+	visible = {
+		NOT = { has_global_flag = SWE_R56_1936_elections }
+	}
+}
