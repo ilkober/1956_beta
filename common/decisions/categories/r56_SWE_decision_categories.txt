@@ -1,10 +1,10 @@
 SWE_R56_category_1936_elections = {
 	
-	icon = generic_civil_support
+	icon = generic_political_actions
 	
 	priority = 100
 
 	visible = {
-		NOT = { has_global_flag = SWE_R56_1936_elections }
+		has_country_flag = SWE_R56_1936_elections_ongoing
 	}
 }

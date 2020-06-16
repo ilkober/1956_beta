@@ -1,14 +1,56 @@
 SWE_R56_category_1936_elections = {
 	SWE_R56_decision_1936_elections_results = {
 		
+		priority = 100
+		
 		icon = generic_operation
 		
-		cost = 50
+		available = {
+			hidden_trigger = { always = no }
+		}
 		
-		days_mission_timeout = 220
+		days_mission_timeout = 230
+		
+		fire_only_once = yes
+		
+		activation = {
+			has_country_flag = SWE_R56_1936_elections_ongoing
+			NOT = { has_country_flag = SWE_R56_1936_elections_end }
+		}
 		
 		visible = {
 			tag = SWE
+			has_country_flag = SWE_R56_1936_elections_ongoing
+			NOT = { has_country_flag = SWE_R56_1936_elections_end }
+		}
+		
+		cancel_if_not_visible = yes
+
+		is_good = yes
+		
+		timeout_effect = {
+			country_event = r56_sweden.2
+		}
+	}
+	SWE_R56_decision_1936_elections_king = {
+		
+		priority = 0
+		
+		icon = generic_operation
+		
+		fire_only_once = yes
+		
+		visible = {
+			tag = SWE
+			has_country_flag = SWE_R56_1936_elections_ongoing
+			NOT = { has_country_flag = SWE_R56_1936_elections_end }
+			NOT = { has_country_flag = SWE_R56_1936_elections_end_king }
+		}
+		
+		complete_effect = {
+			remove_country_flag = SWE_R56_1936_elections_upcoming
+			set_country_flag = SWE_R56_1936_elections_end
+			set_country_flag = SWE_R56_1936_elections_end_king
 		}
 	}
 }

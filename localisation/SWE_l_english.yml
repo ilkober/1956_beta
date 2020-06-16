@@ -756,10 +756,28 @@ news.912.c:0"Outrageous!"
  SWE_R56_king_in_council:0 "The King in Council"
  SWE_R56_king_in_council_desc:0 ""
  
+ ###---> Events <><> <><> <><>
+ r56_sweden.1.title:0 "Election Preparations"
+ r56_sweden.1.desc:0 "Indeed."
+ r56_sweden.1.a:0 "The fate of our nation is at hand."
+ r56_sweden.2.title:0 "The election results are in!"
+ r56_sweden.2.desc:0 "Great."
+ r56_sweden.2.a:0 "Another term for Hansson!"
+ r56_sweden.2.b:0 "A right minority government with Gösta Bagge."
+ r56_sweden.2.c:0 "A coalition government with the SKP because of their recent growth."
+ r56_sweden.2.d:0 "A coalition government with the NSAP because of their recent growth."
+ 
  ###---> Decisions <><> <><> <><>
- SWE_R56_category_1936_elections:0 "The 1936 Swedish Elections"
- SWE_R56_category_1936_elections_desc:0 "It's a thing..."
+ SWE_R56_category_1936_elections:0 "The 1936 Elections"
+ SWE_R56_category_1936_elections_desc:0 "The 1936 general elections are set to be held in September 1936. As the tension is slowly gathering in Europe, where will our nation head? Will the people beg for democracy to guide us through these tragic times or turn to the political extremes?"
  SWE_R56_decision_1936_elections_results:0 "The Election Results"
+ SWE_R56_decision_1936_elections_results_desc:0 "The results of the 1936 general elections will arrive in September 1936. This will unlock the political paths in the national focus tree depending on your choices."
  
  ###---> Tooltips <><> <><> <><>
- SWE_R56_1936_elections:0 "The results of the 1936 Swedish general elections have come in."
+ SWE_R56_1936_elections_ongoing:0 "Preparations for the 1936 elections are currently ongoing."
+ SWE_R56_1936_elections_end:0 "The 1936 election results have come in."
+ SWE_R56_1936_elections_end_hansson:0 "Per Albin Hansson and his party has won a second term in the 1936 elections."
+ SWE_R56_1936_elections_end_bagge:0 "Gösta Bagge and his party has won in the 1936 elections."
+ SWE_R56_1936_elections_end_SKP:0 "Per Albin Hansson obligies to work together with the SKP after their impressive results in the 1936 elections."
+ SWE_R56_1936_elections_end_NSAP:0 "Per Albin Hansson is forced to work together with the NSAP after their impressive results in the 1936 elections."
+ SWE_R56_1936_elections_end_king:0 "Our mighty king, Gustaf V has taken control following the uneasy precense of the political extremes in the country."

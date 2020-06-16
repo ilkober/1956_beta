@@ -1,0 +1,73 @@
+﻿add_namespace = r56_sweden
+
+#-> The Year of the 1936 Elections <><>
+country_event = {
+	id = r56_sweden.1
+	title = r56_sweden.1.title
+	desc = r56_sweden.1.desc
+	picture = GFX_report_event_generic_read_write
+	
+	trigger = {
+		date > 1936.2.1
+		date < 1936.3.1
+	}
+	
+	mean_time_to_happen = {
+		days = 5
+	}
+	
+	option = {
+		name = r56_sweden.1.a
+		set_country_flag = SWE_R56_1936_elections_ongoing
+	}
+}
+
+#-> 1936 Elections Result <><>
+country_event = {
+	id = r56_sweden.2
+	title = r56_sweden.2.title
+	desc = r56_sweden.2.desc
+	picture = GFX_report_event_generic_read_write
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = r56_sweden.2.a
+		trigger = {
+			democracy > 0.4
+		}
+		set_country_flag = SWE_R56_1936_elections_end
+		set_country_flag = SWE_R56_1936_elections_end_hansson
+		remove_country_flag = SWE_R56_1936_elections_ongoing
+	}
+	
+	option = {
+		name = r56_sweden.2.b
+		trigger = {
+			democracy > 0.2
+		}
+		set_country_flag = SWE_R56_1936_elections_end
+		set_country_flag = SWE_R56_1936_elections_end_bagge
+		remove_country_flag = SWE_R56_1936_elections_ongoing
+	}
+	
+	option = {
+		name = r56_sweden.2.c
+		trigger = {
+			communism > 0.15
+		}
+		set_country_flag = SWE_R56_1936_elections_end
+		set_country_flag = SWE_R56_1936_elections_end_SKP
+		remove_country_flag = SWE_R56_1936_elections_ongoing
+	}
+	
+	option = {
+		name = r56_sweden.2.d
+		trigger = {
+			fascism > 0.2
+		}
+		set_country_flag = SWE_R56_1936_elections_end
+		set_country_flag = SWE_R56_1936_elections_end_NSAP
+		remove_country_flag = SWE_R56_1936_elections_ongoing
+	}
+}

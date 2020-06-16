@@ -2495,7 +2495,8 @@ focus = {
 		cost = 5
 		
 		available = {
-			has_country_flag = SWE_R56_1936_elections
+			has_country_flag = SWE_R56_1936_elections_end
+			has_country_flag = SWE_R56_1936_elections_end_hansson
 		}
 		
 		completion_reward = {
@@ -2512,7 +2513,8 @@ focus = {
 		cost = 5
 		
 		available = {
-			has_country_flag = SWE_R56_1936_elections
+			has_country_flag = SWE_R56_1936_elections_end
+			has_country_flag = SWE_R56_1936_elections_end_bagge
 		}
 		
 		completion_reward = {
@@ -2529,7 +2531,8 @@ focus = {
 		cost = 5
 		
 		available = {
-			has_country_flag = SWE_R56_1936_elections
+			has_country_flag = SWE_R56_1936_elections_end
+			has_country_flag = SWE_R56_1936_elections_end_SKP
 		}
 		
 		completion_reward = {
@@ -2546,7 +2549,8 @@ focus = {
 		cost = 5
 		
 		available = {
-			has_country_flag = SWE_R56_1936_elections
+			has_country_flag = SWE_R56_1936_elections_end
+			has_country_flag = SWE_R56_1936_elections_end_NSAP
 		}
 		
 		completion_reward = {
@@ -2563,7 +2567,8 @@ focus = {
 		cost = 5
 		
 		available = {
-			has_country_flag = SWE_R56_1936_elections
+			has_country_flag = SWE_R56_1936_elections_end
+			has_country_flag = SWE_R56_1936_elections_end_king
 		}
 		
 		completion_reward = {
