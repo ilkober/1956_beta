@@ -2465,6 +2465,29 @@ on_actions = {
 			if = {
 				#add target nationality
 				limit = {
+					has_nationality = KUR
+				}
+				random_list = {
+					8 = {
+						add_nationality = TUR
+					}
+					4 = {
+						add_nationality = IRQ
+					}
+					1 = {
+						add_nationality = SYR
+					}
+					2 = {
+						add_nationality = PER
+					}																												
+					85 = { 
+
+					}
+				}																															
+			}			
+			if = {
+				#add target nationality
+				limit = {
 					has_nationality = EGY
 				}
 				random_list = {
