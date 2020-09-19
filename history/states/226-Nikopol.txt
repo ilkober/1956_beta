@@ -8,6 +8,8 @@ state={
 	
 	resources={
 		#oil=4 # was: 6 not sure why this exists not historical?
+		steel=18 # instead it ignored the iron mine of Krivoi Rih in dniepoptrovsk resource reduced in 221
+				
 	}
 
 	history={
