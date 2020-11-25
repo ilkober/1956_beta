@@ -1168,7 +1168,7 @@ focus_tree = {
 	focus = {
 		id = SWE_claim_aland
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		prerequisite = { focus = SWE_abandon_neutrality }
+		prerequisite = { focus = SWE_nationalism_focus focus = SWE_internationalism_focus }
 		mutually_exclusive = { focus = SWE_hansson_3 }
 		
 		bypass = {
@@ -1179,7 +1179,7 @@ focus_tree = {
 		}
 	
 		x = 38
-		y = 1
+		y = 2
 		cost = 10
 		
 		ai_will_do = {
@@ -1561,7 +1561,7 @@ focus = {
 		prerequisite = { focus = SWE_nationalism_focus }
 		
 		x = 34
-		y = 3
+		y = 2
 		cost = 10
 		
 		available = {	
@@ -1708,14 +1708,15 @@ focus = {
 	focus = {
 		id = SWE_demand_aland
 		icon = GFX_goal_generic_forceful_treaty
-		prerequisite = { focus = SWE_abolish_monarchy focus = SWE_arrest_royalists }		
+		prerequisite = { focus = SWE_abolish_monarchy focus = SWE_arrest_royalists }
+		prerequisite = { focus = SWE_claim_aland }
 		available = {
 			is_puppet = no
 		}
 		cancel_if_invalid = yes
 			
-		x = 39
-		y = 4
+		x = 41
+		y = 3
 		cost = 10
 		
 		bypass = {
@@ -1814,11 +1815,11 @@ focus = {
 	focus = {
 		id = SWE_nationalism_focus
 		icon = GFX_goal_support_fascism #icon = GFX_goal_tripartite_pact
-		prerequisite = { focus = SWE_claim_aland }
+		prerequisite = { focus = SWE_abandon_neutrality }
 		mutually_exclusive = { focus = SWE_internationalism_focus }
 	
 		x = 37
-		y = 2
+		y = 1
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1847,11 +1848,11 @@ focus = {
 	focus = {
 		id = SWE_internationalism_focus
 		icon = GFX_goal_support_communism #icon = GFX_goal_tripartite_pact
-		prerequisite = { focus = SWE_claim_aland }
+		prerequisite = { focus = SWE_abandon_neutrality }
 		mutually_exclusive = { focus = SWE_nationalism_focus }
 
 		x = 39
-		y = 2
+		y = 1
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1883,8 +1884,8 @@ focus = {
 		icon = GFX_goal_generic_soviet_construction
 		prerequisite = { focus = SWE_norway_friend }
 		mutually_exclusive = { focus = SWE_deal_soviet }
-		x = 40
-		y = 6
+		x = 42
+		y = 5
 		cost = 10
 		ai_will_do = {
 			factor = 5
@@ -1909,8 +1910,8 @@ focus = {
 				NOT = { country_exists = NOR }
 			}
 		}
-		x = 39
-		y = 5
+		x = 41
+		y = 4
 		cost = 10
 		ai_will_do = {
 			factor = 10
@@ -1939,8 +1940,8 @@ focus = {
 			NOT = { has_war_with = SOV }
 		}
 
-		x = 38
-		y = 6
+		x = 40
+		y = 5
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -1956,8 +1957,8 @@ focus = {
 		icon = GFX_goal_tfv_generic_tech_sharing
 		prerequisite = { focus = SWE_deal_soviet }
 				
-		x = 38
-		y = 7
+		x = 40
+		y = 6
 		cost = 10
 
 		available = {
@@ -1984,8 +1985,8 @@ focus = {
 				NOR = { communism > 0.55 }
 			}	
 		}
-		x = 40
-		y = 7
+		x = 42
+		y = 6
 		cost = 10
 		icon = GFX_focus_generic_join_comintern
 		ai_will_do = {
@@ -2005,7 +2006,7 @@ focus = {
 		prerequisite = { focus = SWE_norway_war_goal }
 		icon = GFX_goal_generic_small_arms
 		x = 34
-		y = 4
+		y = 3
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -2039,7 +2040,7 @@ focus = {
 		prerequisite = { focus = SWE_support_iceland_rebels }
 		icon = GFX_goal_generic_demand_territory
 		x = 34
-		y = 5
+		y = 4
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -2072,7 +2073,7 @@ focus = {
 		prerequisite = { focus = SWE_nationalism_focus }
 		
 		x = 36
-		y = 3
+		y = 2
 		cost = 10
 		ai_will_do = {
 			factor = 1
@@ -2096,7 +2097,7 @@ focus = {
 			country_exists = GER
 		}
 		x = 36
-		y = 6
+		y = 5
 		cost = 10
 		icon = GFX_goal_molotov_ribbentrop_pact
 		
@@ -2118,7 +2119,7 @@ focus = {
 		prerequisite = { focus = SWE_axis_leanings_focus }
 				
 		x = 36
-		y = 7
+		y = 6
 		cost = 10
 
 		available = {
@@ -2141,7 +2142,7 @@ focus = {
 		prerequisite = { focus = SWE_iceland_rebel_uprising }
 		mutually_exclusive = { focus = SWE_axis_leanings_focus }
 		x = 34
-		y = 6
+		y = 5
 		cost = 10
 		icon = GFX_goal_generic_secret_weapon
 			
@@ -2158,7 +2159,7 @@ focus = {
 		
 		
 		x = 34
-		y = 7
+		y = 6
 		cost = 10
 		
 		available = {
@@ -2233,8 +2234,8 @@ focus = {
 		prerequisite = { focus = SWE_internationalism_focus }
 		mutually_exclusive = { focus = SWE_arrest_royalists }
 		
-		x = 38
-		y = 3
+		x = 40
+		y = 2
 		cost = 10
 		
 		available = {
@@ -2255,8 +2256,8 @@ focus = {
 		prerequisite = { focus = SWE_internationalism_focus }
 		mutually_exclusive = { focus = SWE_abolish_monarchy }
 		
-		x = 40
-		y = 3
+		x = 42
+		y = 2
 		
 		cost = 10
 
