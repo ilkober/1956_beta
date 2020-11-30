@@ -1169,7 +1169,6 @@ focus_tree = {
 		id = SWE_claim_aland
 		icon = GFX_focus_renounce_the_treaty_of_trianon
 		prerequisite = { focus = SWE_nationalism_focus focus = SWE_internationalism_focus }
-		mutually_exclusive = { focus = SWE_hansson_3 }
 		
 		bypass = {
 			OR = {
@@ -1301,7 +1300,8 @@ focus_tree = {
 		prerequisite = { focus = SWE_neutrality_focus focus = SWE_abandon_neutrality }
 		
 		mutually_exclusive = { focus = SWE_kings_council }
-		mutually_exclusive = { focus = SWE_claim_aland }
+		mutually_exclusive = { focus = SWE_nationalism_focus }
+		mutually_exclusive = { focus = SWE_internationalism_focus }
 		x = 30
 		y = 1
 		cost = 10
@@ -1715,7 +1715,7 @@ focus = {
 		}
 		cancel_if_invalid = yes
 			
-		x = 41
+		x = 39
 		y = 3
 		cost = 10
 		
@@ -1817,6 +1817,7 @@ focus = {
 		icon = GFX_goal_support_fascism #icon = GFX_goal_tripartite_pact
 		prerequisite = { focus = SWE_abandon_neutrality }
 		mutually_exclusive = { focus = SWE_internationalism_focus }
+		mutually_exclusive = { focus = SWE_hansson_3 }
 	
 		x = 37
 		y = 1
@@ -1850,6 +1851,7 @@ focus = {
 		icon = GFX_goal_support_communism #icon = GFX_goal_tripartite_pact
 		prerequisite = { focus = SWE_abandon_neutrality }
 		mutually_exclusive = { focus = SWE_nationalism_focus }
+		mutually_exclusive = { focus = SWE_hansson_3 }
 
 		x = 39
 		y = 1
@@ -1884,7 +1886,7 @@ focus = {
 		icon = GFX_goal_generic_soviet_construction
 		prerequisite = { focus = SWE_norway_friend }
 		mutually_exclusive = { focus = SWE_deal_soviet }
-		x = 42
+		x = 40
 		y = 5
 		cost = 10
 		ai_will_do = {
@@ -1910,7 +1912,7 @@ focus = {
 				NOT = { country_exists = NOR }
 			}
 		}
-		x = 41
+		x = 39
 		y = 4
 		cost = 10
 		ai_will_do = {
@@ -1940,7 +1942,7 @@ focus = {
 			NOT = { has_war_with = SOV }
 		}
 
-		x = 40
+		x = 38
 		y = 5
 		cost = 10
 		ai_will_do = {
@@ -1957,7 +1959,7 @@ focus = {
 		icon = GFX_goal_tfv_generic_tech_sharing
 		prerequisite = { focus = SWE_deal_soviet }
 				
-		x = 40
+		x = 38
 		y = 6
 		cost = 10
 
@@ -1985,7 +1987,7 @@ focus = {
 				NOR = { communism > 0.55 }
 			}	
 		}
-		x = 42
+		x = 40
 		y = 6
 		cost = 10
 		icon = GFX_focus_generic_join_comintern
@@ -1999,74 +2001,6 @@ focus = {
 			NOR = { country_event = { id = sweden.60 days = 1 } }
 		}
 	}
-	
-	
-	focus = {
-		id = SWE_support_iceland_rebels
-		prerequisite = { focus = SWE_norway_war_goal }
-		icon = GFX_goal_generic_small_arms
-		x = 34
-		y = 3
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		available = {
-			has_equipment = {  infantry_equipment_1 > 1000 }
-			has_equipment = {  support_equipment_1 > 50 }
-		}
-		
-		bypass = {
-			OR = {
-				ICE = {
-					is_subject = no
-				}
-				ICE = {
-					NOT = { controls_state = 100 }
-				}
-				ICE = {
-					has_completed_focus = ICE_fas_rallies
-				}
-			}
-		}
-
-		completion_reward = {
-			country_event = { id = iceland.10 days = 15 }
-		}
-	}
-	
-	focus = {
-		id = SWE_iceland_rebel_uprising
-		prerequisite = { focus = SWE_support_iceland_rebels }
-		icon = GFX_goal_generic_demand_territory
-		x = 34
-		y = 4
-		cost = 10
-		ai_will_do = {
-			factor = 1
-		}
-		
-		bypass = {
-			OR = {
-				ICE = {
-					is_subject = no
-				}
-				ICE = {
-					NOT = { controls_state = 100 }
-				}
-				ICE = {
-					has_completed_focus = ICE_fas_rallies
-				}
-			}
-		}
-
-		completion_reward = {
-			ICE = {
-				country_event = { id = iceland.1 days = 0 }
-			}
-		}
-	}
-	
 	focus = {
 		id = SWE_osterbotten
 		icon = GFX_goal_swedenfication
@@ -2091,7 +2025,7 @@ focus = {
 		
 	focus = {
 		id = SWE_axis_leanings_focus
-		prerequisite = { focus = SWE_osterbotten focus = SWE_iceland_rebel_uprising }
+		prerequisite = { focus = SWE_osterbotten focus = SWE_norway_war_goal }
 		mutually_exclusive = { focus = SWE_found_own_empire }
 		available = {
 			country_exists = GER
@@ -2139,7 +2073,7 @@ focus = {
 			is_in_faction = no
 			is_puppet = no
 		}
-		prerequisite = { focus = SWE_iceland_rebel_uprising }
+		prerequisite = { focus = SWE_norway_war_goal }
 		mutually_exclusive = { focus = SWE_axis_leanings_focus }
 		x = 34
 		y = 5
