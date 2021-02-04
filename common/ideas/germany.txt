@@ -2031,6 +2031,34 @@ ideas = {
 				smooth_talking_charmer
 			}
 		}
+		GER_erhard_milch = {
+					
+			picture = generic_political_advisor_europe_1
+					
+			allowed = {
+				original_tag = GER
+			}
+			
+			available = {
+				NOT = {
+					has_government = communism
+				}
+				if = {
+					limit = {
+						NOT = { has_global_flag = GER_use_standard_tree }
+					}
+					has_completed_focus = GER_long_range_escorts
+				}
+				else = {
+					has_completed_focus = GER_nationalize_aviation_industry
+				}
+			}
+			
+			visible = {
+			}
+			
+			traits = { aircraft_production_expert }
+		}		
 		GER_jacob_kaiser = {
 			allowed = {
 				original_tag = GER
