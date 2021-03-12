@@ -1112,7 +1112,7 @@ focus_tree = {
         id = tblra_reactivate_caur_contacts
         icon = GFX_goal_italian_cooperation
         prerequisite = { focus = tblra_belgian_militarism }
-		mutually_exclusive = {focus = tblra_germany_millitary_coop focus = tblra_belgium_first  focus = tblra_an_ally_across_the_channel }
+		mutually_exclusive = { focus = tblra_germany_millitary_coop focus = tblra_belgium_first  focus = tblra_an_ally_across_the_channel }
 		relative_position_id = tblra_belgium_first
         x = 2
         y = 0
