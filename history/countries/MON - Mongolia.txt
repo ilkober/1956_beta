@@ -13,6 +13,11 @@ set_technology = {
 set_country_flag = started_out_as_landlocked
 add_ideas = {
 	limited_conscription
+	MON_ill_educated_population
+	MON_new_course_policy
+	MON_dominanted_animal_husbandry
+	MON_unpopular_government
+	MON_soviet_NKVD_agents
 }
 
 1939.1.1 = {
@@ -67,13 +72,14 @@ set_politics = {
 	elections_allowed = no
 }
 set_popularities = {
-	communism = 100
+	communism = 90
+	democratic = 10
 }
 
 create_country_leader = {
-	name = "Anandyn Amar"
+	name = "Peljidiin Genden"
 	desc = "POLITICS_ANANDYN_AMAR_DESC"
-	picture = GFX_portrait_mon_anandyn_amar
+	picture = "gfx/leaders/MON/r56_portrait_MON_Butochiyn_Tsog.dds"
 	expire = "1965.1.1"
 	ideology = marxism
 	traits = {

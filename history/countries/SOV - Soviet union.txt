@@ -338,7 +338,7 @@ create_corps_commander = {
 		picture = "Portrait_Soviet_Issa_Pliyev.dds"
 	traits = { cavalry_officer }
 	skill = 1
-
+	id = 9000
 	
 	attack_skill = 1
 	defense_skill = 1
