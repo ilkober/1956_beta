@@ -34,6 +34,7 @@ GEN_tuva_annex_ussr_desc:0 "CongratulationS! You found the secret focus suggeste
 mon_purged_intellectuals_flag:0 "Intellectuals Purged"
 mon_purged_party_flag:0 "Party Members Purged"
 mon_purged_lamas_flag:0 "Lamas Purged"
+mon_new_party_elite_formed_flag:0 "New Party Elite Established"
 
 ### ideas ###
 MON_amandyn_amar:0 "Amandyn Amar"
@@ -48,6 +49,12 @@ MON_butochiyn_tsog:0 "Butochiyn Tsog"
 
 MON_shirnengiin_ayuush:0 "Shirmemgiin Ayuush"
 MON_jamtsangiin_damdinsueren:0 "Jamtsangiin Damdisueren"
+MON_suekhbaataryn_yanjmaa:0 "Suekhbaataryn Yanjmaa"
+
+MON_yumjaagiin_tsedenbal:0 "Yumjaagiin Tsedenbal"
+MON_solomyn_luvsan:0 "Solomyn Luvsan"
+MON_gonchigiin_bumtsend:0 "Gonchigiin Bumtsend"
+MON_dashhin_damba:0 "Dashhin Damba"
 
 
 MON_ill_educated_population:0 "Ill-Educated Population"
@@ -145,10 +152,12 @@ MON_soviet_mongolian_exchange_program_desc:0 "Lacking proper funds and installat
 MON_replace_old_script:0 "Replace Old Script"
 MON_ulaanbator_national_university:0 "Ulaanbaatar National University"
 
-
+MON_form_new_party_elite:0 "Form New Party Elite"
 MON_appease_loyal_intelligentsia:0 "Appease Loyal Intelligentsia"
 MON_spread_atheist_propaganda:0 "Spread Atheist Propaganda"
+
 MON_remove_nominal_leadership:0 "Remove Nominal Leadership"
+MON_redraw_the_constitution:0 "Redraw the Constitution"
 
 
 

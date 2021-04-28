@@ -658,8 +658,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MON_train_new_generation_of_communist_officials
-		icon = GFX_goal_arrests
+		id = MON_form_new_party_elite
+		icon = GFX_focus_generic_self_management
 		x = -2
 		y = 1
 		cost = 10
@@ -672,12 +672,31 @@ focus_tree = {
 		ai_will_do = {
 			factor = 50		
 		}
-		completion_reward = {
-			add_timed_idea = {
-				idea = MON_incoming_militarist_uprising
-    			days = 365
+
+		bypass = {
+			NOT = {
+				has_idea = Mon_party_purged
 			}
 		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = {
+			    ideology = communism
+			    popularity = 0.05
+			}
+			if = {
+				limit = {
+					has_idea = Mon_party_purged
+				}
+				modify_timed_idea = {
+					idea = Mon_party_purged
+					days = -240
+				}
+			}
+			set_country_flag = mon_new_party_elite_formed_flag
+		}
+		search_filters = { FOCUS_FILTER_STABILITY }
 	}
 
 	focus = {
@@ -763,7 +782,7 @@ focus_tree = {
 		y = 1
 		cost = 5
 		relative_position_id = MON_spread_atheist_propaganda
-		prerequisite = { focus = MON_train_new_generation_of_communist_officials }
+		prerequisite = { focus = MON_form_new_party_elite }
 		prerequisite = { focus = MON_spread_atheist_propaganda }
 		prerequisite = { focus = MON_appease_loyal_intelligentsia }
 		available_if_capitulated = no
@@ -824,24 +843,6 @@ focus_tree = {
 		id = MON_redraw_the_constitution
 		icon = GFX_goal_molotov_ribbentrop_pact
 		x = -2
-		y = 1
-		cost = 10
-		relative_position_id = MON_remove_nominal_leadership
-		prerequisite = { focus = MON_remove_nominal_leadership }
-		available_if_capitulated = yes
-
-		ai_will_do = {
-			factor = 50		
-		}
-		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_advisors }
-		}
-	}
-
-	focus = {
-		id = MON_establish_new_party_elite
-		icon = GFX_goal_molotov_ribbentrop_pact
-		x = 0
 		y = 1
 		cost = 10
 		relative_position_id = MON_remove_nominal_leadership

@@ -625,7 +625,70 @@ ideas = {
 				NOT = { has_country_flag = mon_purged_party_flag }
 			}
 			traits = { ambitious_agrarian }
-			cost = 75
+		}
+
+		MON_suekhbaataryn_yanjmaa = {
+			picture = tur_halide_edib_adivar
+			
+			allowed = {
+				original_tag = MON
+			}
+			traits = { red_suffragette }
+		}
+
+		#new generation of communist leaders #
+		MON_yumjaagiin_tsedenbal = {
+			picture = generic_political_advisor_asia_4
+			
+			allowed = {
+				original_tag = MON
+			}
+			available = {
+				NOT = {
+					has_country_leader = {
+						name = "Yumjaagiin Tsedenbal"
+						ruling_only = yes
+					}
+				}
+				NOT = { has_country_flag = mon_new_party_elite_formed_flag }
+			}
+			traits = { captain_of_industry }
+		}
+
+		MON_solomyn_luvsan = {
+			picture = generic_political_advisor_asia_2
+			
+			allowed = {
+				original_tag = MON
+			}
+			available = {
+				NOT = { has_country_flag = mon_new_party_elite_formed_flag }
+			}
+			traits = { financial_expert }
+		}
+
+		MON_gonchigiin_bumtsend = {
+			picture = generic_political_advisor_asia_4
+			
+			allowed = {
+				original_tag = MON
+			}
+			available = {
+				NOT = { has_country_flag = mon_new_party_elite_formed_flag }
+			}
+			traits = { POL_Secretary_General }
+		}
+
+		MON_dashhin_damba = {
+			picture = generic_political_advisor_asia_3
+			
+			allowed = {
+				original_tag = MON
+			}
+			available = {
+				NOT = { has_country_flag = mon_new_party_elite_formed_flag }
+			}
+			traits = { prince_of_terror }
 		}
 	}	
 
