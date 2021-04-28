@@ -52,6 +52,9 @@ focus_tree = {
 		prerequisite = { focus = MON_aftermath_of_visit_to_moscow }
 		available_if_capitulated = yes
 
+		available = {
+			has_government = communism	
+		}
 		ai_will_do = {
 			factor = 50		
 		}
@@ -154,6 +157,17 @@ focus_tree = {
 		mutually_exclusive = { 
 			focus = MON_oppose_military_involvement
 		}
+
+		available = {
+			has_government = communism
+			NOT = {
+				has_country_leader = {
+					name = "Peljidiin Genden"
+					ruling_only = yes
+				}
+			}
+		}
+
 		prerequisite = { 
 			focus = MON_hold_the_plenum_of_central_committee
 		}
@@ -169,7 +183,7 @@ focus_tree = {
 
 	focus = {
 		id = MON_soviet_industrial_cooperation
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = GFX_goal_generic_construct_civilian
 		x = 7
 		y = 1
 		cost = 10
@@ -177,17 +191,49 @@ focus_tree = {
 		prerequisite = { focus = MON_sign_protocol_of_mutual_assistance }
 		available_if_capitulated = yes
 
+		available = {
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 9
+				}	
+			}
+		}
+
 		ai_will_do = {
 			factor = 50		
 		}
+
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_INDUSTRY }
 	}
 
 	focus = {
 		id = MON_soviet_mongolian_exchange_program
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = GFX_goal_communist_brain
 		x = 5
 		y = 1
 		cost = 10
@@ -195,17 +241,32 @@ focus_tree = {
 		prerequisite = { focus = MON_sign_protocol_of_mutual_assistance }
 		available_if_capitulated = yes
 
+		available = {
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 29
+				}	
+			}
+			ROOT = {
+				num_of_factories > 7
+			}
+		}
+
 		ai_will_do = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			swap_ideas = { remove_idea = MON_ill_educated_population add_idea = MON_population_learning }
+			add_research_slot = 1
 		}
+	search_filters = { FOCUS_FILTER_RESEARCH  }
 	}
 
 	focus = {
 		id = MON_joint_technological_development
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = gfx_socialist_science
 		x = 1
 		y = 1
 		cost = 10
@@ -214,17 +275,78 @@ focus_tree = {
 		prerequisite = { focus = MON_soviet_industrial_cooperation }
 		available_if_capitulated = yes
 
+		available = {
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 29
+				}	
+			}
+		}
+
 		ai_will_do = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			add_popularity = {
+			    ideology = communism
+			    popularity = 0.05
+			}
+			add_to_tech_sharing_group = spr_research
+			SOV = { add_to_tech_sharing_group = spr_research }
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+			add_tech_bonus = {
+				name = UK_secret_focus
+				bonus = 1
+				uses = 1
+				category = electronics
+			}
 		}
+		search_filters = { FOCUS_FILTER_RESEARCH  }
+	}
+
+	focus = {
+		id = MON_replace_old_script
+		icon = GFX_goal_generic_secret_documents
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = MON_joint_technological_development
+		prerequisite = { focus = MON_joint_technological_development }
+		available_if_capitulated = no
+
+		available = {
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 49
+				}	
+			}
+		}
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_timed_idea = {
+			    idea = MON_script_reform_in_progress
+				days = 180
+			}
+			add_ideas = MON_changed_script
+		}
+		search_filters = { FOCUS_FILTER_RESEARCH  }
 	}
 
 	focus = {
 		id = MON_ulaanbator_national_university
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = GFX_focus_research
 		x = -1
 		y = 2
 		cost = 10
@@ -232,18 +354,27 @@ focus_tree = {
 		prerequisite = { focus = MON_joint_technological_development focus = MON_appease_loyal_intelligentsia}
 		available_if_capitulated = yes
 
+		available = {
+			has_idea = MON_population_learning
+			ROOT = {
+				num_of_factories > 15
+			}
+		}
+
 		ai_will_do = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			remove_ideas = MON_population_learning 
+			add_research_slot = 1
 		}
+		search_filters = { FOCUS_FILTER_RESEARCH  }
 	}
 
 
 	focus = {
 		id = MON_invite_soviet_advisors
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = GFX_goal_soviet_military_advisors
 		x = 3
 		y = 1
 		cost = 10
@@ -252,23 +383,51 @@ focus_tree = {
 		prerequisite = { focus = MON_sign_protocol_of_mutual_assistance }
 		available_if_capitulated = yes
 
+		available = {
+			SOV = {
+				NOT = { has_war_with = ROOT }
+				has_opinion = {
+					target = ROOT
+					value > 29
+				}	
+			}
+		}
+
 		ai_will_do = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			add_ideas = MON_soviet_advisors
 			SOV = {
 				every_unit_leader = {
-		
 					limit = {
 						OR = {
-							has_id = 9000  #was deployed actually
-							has_id = 1421  #instead of Michail Tikhonov
-							has_id = 1422  #instead of Ivan Nikitin					
+							has_id = 9000  #was deployed actually				
 						}
 					}
 					set_nationality = ROOT
 				}				
+			}
+			create_corps_commander = {
+				name = "Ivan Nikitin"
+				portrait_path = "gfx/leaders/SOV/Portrait_Soviet_Generic_land_2.dds"
+				traits = { cavalry_leader }
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1						
+			}
+
+			create_corps_commander = {
+				name = "Michail Tikhonov"
+				portrait_path = "gfx/leaders/SOV/Portrait_Soviet_Matkian_Popov.dds"
+				traits = { cavalry_leader }
+				skill = 3
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 3						
 			}
 		}
 	}
@@ -287,7 +446,7 @@ focus_tree = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_advisors }
 		}
 	}
 
@@ -303,6 +462,13 @@ focus_tree = {
 		prerequisite = { focus = MON_sign_protocol_of_mutual_assistance }
 		available_if_capitulated = yes
 
+		
+		available = {
+			has_government = communism
+			SOV = {
+				NOT = { has_war_with = ROOT }
+			}
+		}
 		ai_will_do = {
 			factor = 50		
 		}
@@ -331,6 +497,15 @@ focus_tree = {
 		prerequisite = { focus = MON_appoint_choibalsan_as_interior_minister }
 		available_if_capitulated = yes
 
+		available = {
+			has_government = communism
+			NOT = {
+				has_country_leader = {
+					name = "Peljidiin Genden"
+					ruling_only = yes
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 50		
 		}
@@ -338,6 +513,7 @@ focus_tree = {
 			add_political_power = 120	
 			add_ideas = MON_buddhist_opposition
 		}
+		search_filters = { FOCUS_FILTER_POLITICAL}
 	}
 
 	focus = {
@@ -353,6 +529,9 @@ focus_tree = {
 
 		ai_will_do = {
 			factor = 50		
+		}
+		available = {
+			has_government = communism
 		}
 
 		completion_reward = {
@@ -475,6 +654,7 @@ focus_tree = {
 				}
 			}
 		}
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL}
 	}
 
 	focus = {
@@ -502,7 +682,7 @@ focus_tree = {
 
 	focus = {
 		id = MON_spread_atheist_propaganda
-		icon = GFX_goal_arrests
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
 		x = 0
 		y = 1
 		cost = 10
@@ -512,20 +692,36 @@ focus_tree = {
 		}
 		available_if_capitulated = yes
 
+		available = {
+			has_government = communism
+		}
 		ai_will_do = {
 			factor = 50		
 		}
+		bypass = {
+			NOT = {
+				has_idea = Mon_lamas_purged
+			}
+		}
+
 		completion_reward = {
-			add_timed_idea = {
-				idea = MON_incoming_militarist_uprising
-    			days = 365
+			add_stability = -0.05
+			add_ideas = MON_atheism_propaganda
+			if = {
+				limit = {
+					has_idea = Mon_lamas_purged
+				}
+				modify_timed_idea = {
+					idea = Mon_lamas_purged
+					days = -240
+				}
 			}
 		}
 	}
 
 	focus = {
 		id = MON_appease_loyal_intelligentsia
-		icon = GFX_goal_arrests
+		icon = GFX_goal_generic_intelligence_exchange
 		x = 2
 		y = 1
 		cost = 10
@@ -535,37 +731,92 @@ focus_tree = {
 		}
 		available_if_capitulated = yes
 
+		bypass = {
+			NOT = {
+				has_idea = Mon_intellectuals_purged
+			}
+		}
+
 		ai_will_do = {
 			factor = 50		
 		}
 		completion_reward = {
-			add_timed_idea = {
-				idea = MON_incoming_militarist_uprising
-    			days = 365
+			add_political_power = 100
+			add_stability = 0.1
+			if = {
+				limit = {
+					has_idea = Mon_intellectuals_purged
+				}
+				modify_timed_idea = {
+					idea = Mon_intellectuals_purged
+					days = -240
+				}
 			}
 		}
+		search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL}
 	}
 
 	focus = {
 		id = MON_remove_nominal_leadership
-		icon = GFX_goal_arrests
+		icon = GFX_goal_generic_war_with_comintern
 		x = 0
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = MON_spread_atheist_propaganda
 		prerequisite = { focus = MON_train_new_generation_of_communist_officials }
 		prerequisite = { focus = MON_spread_atheist_propaganda }
 		prerequisite = { focus = MON_appease_loyal_intelligentsia }
-		available_if_capitulated = yes
+		available_if_capitulated = no
+		
+		available = {
+			OR ={
+				AND = {
+					has_government = communism
+					has_country_leader = {
+						name = "Peljidiin Genden"
+						ruling_only = yes
+					}
+				}
+				AND = {
+					has_government = communism
+					has_country_leader = {
+						name = "Amandyn Amar"
+						ruling_only = yes
+					}
+				}
+			}
+		}
 
+		bypass = {
+			has_country_leader = {
+				name = "Khorloogiin Choibalsan"
+				ruling_only = yes
+			}
+		}
 		ai_will_do = {
 			factor = 50		
 		}
 		completion_reward = {
-			add_timed_idea = {
-				idea = MON_incoming_militarist_uprising
-    			days = 365
+			if = {
+				limit = { 
+					has_idea = MON_consolidated_power_1 
+				}
+				remove_ideas = MON_consolidated_power_1
 			}
+			if = {
+				limit = { 
+					has_idea = MON_consolidated_power_2 
+				}
+				remove_ideas = MON_consolidated_power_2
+			}
+			if = {
+				limit = { 
+					has_idea = MON_consolidated_power_3 
+				}
+				remove_ideas = MON_consolidated_power_3
+			}
+			MON = { country_event = mongol.7 }
+			add_country_leader_trait = dictator
 		}
 	}
 
@@ -583,7 +834,7 @@ focus_tree = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_advisors }
 		}
 	}
 
@@ -601,7 +852,7 @@ focus_tree = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_advisors }
 		}
 	}
 
@@ -620,7 +871,7 @@ focus_tree = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_advisors }
 		}
 	}
 
@@ -638,7 +889,7 @@ focus_tree = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_advisors }
 		}
 	}
 
@@ -656,7 +907,7 @@ focus_tree = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_advisors }
 		}
 	}
 
@@ -674,7 +925,7 @@ focus_tree = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_advisors }
 		}
 	}
 
@@ -692,7 +943,7 @@ focus_tree = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_NKVD_and_military }
+			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_advisors }
 		}
 	}
 
@@ -712,6 +963,9 @@ focus_tree = {
 		}
 		available_if_capitulated = yes
 
+		available = {
+			is_puppet = no	
+		}
 		ai_will_do = {
 			factor = 50		
 		}
@@ -736,6 +990,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		available = {
+			is_puppet = no
 			AND = {
 				has_government = communism
 				has_country_leader = {
@@ -3228,7 +3483,7 @@ focus_tree = {
 	focus = {
 		id = MON_transfer_the_funds_of_mongolbank
 		icon = GFX_focus_mex_privatisation
-		x = -40
+		x = -20
 		y = 0
 		cost = 10
 
@@ -3245,7 +3500,7 @@ focus_tree = {
 	focus = {
 		id = MON_expand_elementary_schools
 		icon = GFX_goal_research_silver_cooperation
-		x = -46
+		x = -26
 		y = 0
 		cost = 10
 

@@ -30,6 +30,11 @@ GEN_tuva_annex_ussr:0 "Soviet What?"
 GEN_tuva_annex_ussr_desc:0 "CongratulationS! You found the secret focus suggested by someone on the rt56 discord. He thought that his plea was ignored but against all odds, his call was heard. A gracious Waffle listened his prayer and made his vow a reality under a moonless sky. Have fun enjoying your easy Tuvan world conquest."
 
 
+### flags ###
+mon_purged_intellectuals_flag:0 "Intellectuals Purged"
+mon_purged_party_flag:0 "Party Members Purged"
+mon_purged_lamas_flag:0 "Lamas Purged"
+
 ### ideas ###
 MON_amandyn_amar:0 "Amandyn Amar"
 MON_davaagijn_namsrai:0 "Davaagijn Namsrai"
@@ -41,6 +46,9 @@ MON_tsendiin_olzvoy:0 "Tsendiin Olzvoy"
 MON_lodongiin_dandar:0 "Lodongiin Dandar"
 MON_butochiyn_tsog:0 "Butochiyn Tsog"
 
+MON_shirnengiin_ayuush:0 "Shirmemgiin Ayuush"
+MON_jamtsangiin_damdinsueren:0 "Jamtsangiin Damdisueren"
+
 
 MON_ill_educated_population:0 "Ill-Educated Population"
 MON_ill_educated_population_desc:0 "The overall quality of our people's education remains on extremely low level. Fixing it will surely require much time and effort."
@@ -50,6 +58,8 @@ Mon_elementary_schools:0 "Elementary Schools Expanded"
 Mon_elementary_schools_desc:0 "Government funds were dedicated to greatly expand the current education standards across country."
 MON_changed_script:0 "Adopted New Script"
 MON_changed_script_desc:0 "Old Mongolian script did has different writing forms, which severely hampered he study progress of our children. New changes allow our population to learn more efficiently."
+MON_script_reform_in_progress:0 "Script Reform in Progress"
+MON_script_reform_in_progress_desc:0 "Rewriting and printing books in the new manner is costly and time-consuming affair. "
 MON_new_course_policy:0 "New Course Policy"
 MON_new_course_policy_desc:0 "After devastation caused by forced collectivization in 1928-1932 we are working on our own industrial plan with national specific."
 MON_dominanted_animal_husbandry:0 "Domination of Animal Husbandry"
@@ -58,8 +68,8 @@ MON_unpopular_government:0 "Unpopular Government"
 MON_unpopular_government_desc:0 "The current party leader is especially unpopular among other party members."
 MON_soviet_NKVD_agents:0 "Soviet NKVD Agents"
 MON_soviet_NKVD_agents_desc:0 "Many [SOV.GetAdjective] diplomats, military advisors and NKVD agents are present in our country. "
-MON_soviet_NKVD_and_military:0 "Soviet Military Advisors"
-MON_soviet_NKVD_and_military_desc:0 "[SOV.GetAdjective] military specialists were dispatched to our country as a part of our mutual assistance treaty."
+MON_soviet_advisors:0 "Soviet Military Advisors"
+MON_soviet_advisors_desc:0 "[SOV.GetAdjective] military specialists were dispatched to our country as a part of our mutual assistance treaty."
 nkvd_desc:0 "NKVD has been drastically increased to improve the performance of country's Tatnuulhim fenhij Gazar (General Intelligence Agency of Mongolia)."
 MON_more_border_patrols:0 "Extended Border Patrols"
 MON_more_border_patrols_desc:0 "The security of our land border was given the highest priority. We need everything and everyone available to preserve our state!"
@@ -72,6 +82,7 @@ MON_troika_organized:0 "Organized "Troika""
 MON_troika_organized_desc:0 "Following an example of the Stalinists revolutionary troikas, we have established our own troika which is led by Choibalsan to bring the law and order to the state."
 MON_buddhist_opposition:0 "Buddhist Opposition"
 MON_buddhist_opposition_desc:0 "Our anti-religious campaign has delivered its first results which are negatively impacting our government's positions. "
+
 
 MON_consolidated_power_1:0 "Consolidated Power in One Area"
 MON_consolidated_power_1_desc:0 "The power is now in a firm grip of one leader, and this being Choibalsan operating behind the back of Amandyn Amar."
@@ -90,6 +101,7 @@ Mon_party_purged:0 "Party Purged"
 Mon_party_purged_desc:0 "Reshuffle and arrests were conducted, leaving great scares in the current party structure."
 Mon_lamas_purged:0 "Lamas Purged"
 Mon_lamas_purged_desc:0 "Many members of the religious institutions have fled the country or were forced into hiding due to the recent government purges."
+MON_atheism_propaganda:0 "Atheism Propaganda"
 
 Mongolbank_very_high_funds:0 "Mongolbank: §GVery high funds§!"
 Mongolbank_very_high_funds_desc:0 "Hard to operate properly, yet the economy is booming!"
@@ -126,6 +138,19 @@ MON_the_revolutionary_centre_desc:0 "Religious obstacles have been hanging on th
 MON_the_great_terror:0 "The Great Terror"
 MON_the_great_terror_desc:0 "The newly established Troika has proven to be extremely effective in liquidating any sort of the political opposition to the current regime. Many traitors and potential collaborators are present across the country, in military and maybe even in the government. If we want to appease Stalin and show him our loyalty we must do what must be done."
 
+MON_joint_technological_development:0 "Joint Technological Development"
+MON_soviet_industrial_cooperation:0 "Industrial Cooperation with [SOV.GetAdjective]s"
+MON_soviet_mongolian_exchange_program:0 "[SOV.GetAdjective]-[MON.GetAdjective] Student Exchange"
+MON_soviet_mongolian_exchange_program_desc:0 "Lacking proper funds and installations, we cannot afford any sort a massive education reform with our current economy. Our benefactors in face of Great Powers, however, have everything our youngest generation can only dream about. We shall contact them and establish the student exchange program if we are to properly educate our population."
+MON_replace_old_script:0 "Replace Old Script"
+MON_ulaanbator_national_university:0 "Ulaanbaatar National University"
+
+
+MON_appease_loyal_intelligentsia:0 "Appease Loyal Intelligentsia"
+MON_spread_atheist_propaganda:0 "Spread Atheist Propaganda"
+MON_remove_nominal_leadership:0 "Remove Nominal Leadership"
+
+
 
 #
 MON_proudly_alone:0 "Proudly Alone"
@@ -136,7 +161,6 @@ MON_expand_elementary_schools_desc:0 "Started originally in 1936, an expansion o
 MON_transfer_the_funds_of_mongolbank:0 "Transfer the Funds of Mongolbank"
 MON_transfer_the_funds_of_mongolbank_desc:0 "Founded in 1924 as a part of cooperation between [SOV.GetNameDef] and [MON.GetNameDef], the central bank of Mongolia, also Mongolbank, oversees the course of national currency tugrik, which has replaced Chinese silvers as well as Mexican and American dollars after the Revolution. [SOV.GetAdjective]s have agreed to transfer all their funds and investments to us on the gratis basis. We should start investing our newly aquired finances immediately! "
 MON_student_exchange_programs:0 "Student Exchange Programms"
-MON_student_exchange_programs_desc:0 "Lacking proper funds and installations, we cannot afford any sort a massive education reform with our current economy. Our benefactors in face of Great Powers, however, have everything our youngest generation can only dream about. We shall contact them and establish the student exchange program if we are to properly educate our population."
 
 
 ### events ###
