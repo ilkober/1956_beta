@@ -2111,11 +2111,7 @@
 		}
 
 		available = {
-			controls_state = 459
-			controls_state = 460
-			controls_state = 513
-			controls_state = 860
-			controls_state = 514
+			
 		}
 		
 		bypass = {
@@ -2668,8 +2664,10 @@
 			}			
 		}
 		completion_reward = {
-			add_ideas = tblra_volunteer_corps
-			#add_ideas = JAP_communist_volunteers
+			set_rule = {
+				can_send_volunteers = yes
+			}
+			add_ideas = JAP_communist_volunteers
 		}
 		search_filters = { FOCUS_FILTER_ANNEXATION }
 	}
@@ -3243,17 +3241,10 @@
 			}
 		}
 		bypass = {
-			OR = {
-				is_in_faction_with = ENG
-				NOT = {
-					has_completed_focus = FRA_little_entente
-				}
-				is_in_faction = yes
-				NOT = {
-					is_faction_leader = yes
-				}
+			is_in_faction_with = ENG
+			NOT = {
+				has_completed_focus = FRA_little_entente
 			}
-			
 		}
 		available_if_capitulated = no
 		ai_will_do = {

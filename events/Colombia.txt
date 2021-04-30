@@ -9,33 +9,25 @@ country_event = {
 	id = colombia.1
 	title = colombia.1.t
 	desc = colombia.1.d
-	picture = GFX_report_event_british_inspect_troops
+	picture = GFX_report_event_communist_leader
 	
 	is_triggered_only = yes
 	
 	option = {
 		name = colombia.1.a
-		custom_effect_tooltip = colombia_1_tt
+		custom_effect_tooltip = colombia.1.d
 		hidden_effect = {
 			create_corps_commander = {
 				name = "Profesor Yarumo"
 				portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_3.dds"
 				traits = { jungle_rat trait_mountaineer}
-				skill = 2
-				attack_skill = 2
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 2	
+				skill = 1
 			}			
 			create_corps_commander = {
 				name = "Simacota Kilomandoy"
 				portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
 				traits = { jungle_rat }
 				skill = 1
-				attack_skill = 1
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 2	
 			}		
 		}
 	}
@@ -45,7 +37,7 @@ country_event = {
 	id = colombia.2
 	title = colombia.2.t
 	desc = colombia.2.d
-	picture = GFX_report_event_communists_cheer
+	picture = GFX_report_event_hitler_parade
 	
 	is_triggered_only = yes
 	
@@ -144,7 +136,7 @@ country_event = {
 	id = colombia.3
 	title = colombia.3.t
 	desc = colombia.3.d
-	picture = GFX_report_event_chamberlain_announce
+	picture = GFX_report_event_hitler_parade
 	is_triggered_only = yes
 	
 	option = {
@@ -161,7 +153,7 @@ country_event = {
 	id = colombia.4
 	title = colombia.4.t
 	desc = colombia.4.d
-	picture = GFX_report_event_ANZAC_day
+	picture = GFX_report_event_hitler_parade
 	is_triggered_only = yes
 	
 	option = {
@@ -176,6 +168,26 @@ country_event = {
 	}	
 
 }
+
+country_event = {
+	id = colombia.5
+	title = colombia.4.t
+	desc = colombia.4.d
+	picture = GFX_report_event_hitler_parade
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	
+	option = {
+		name = colombia.4.a
+		VEN = {
+			country_event = colombia.2
+		}					
+	}	
+
+}
+
 
 country_event = {
 	id = colombia.7
@@ -303,7 +315,7 @@ country_event = {
 	id = colombia.11
 	title = colombia.11.t
 	desc = colombia.11.d
-	picture = GFX_report_event_generic_rifles
+	picture = GFX_report_event_hitler_parade
 	
 	trigger = {
 		original_tag = COL
@@ -320,10 +332,10 @@ country_event = {
 	
 	option = {
 		name = colombia.11.a
-		custom_effect_tooltip = colombia11_tt
-		hidden_effect = {
-			load_oob = "COL_saltacharcos"
-		}
+
+			hidden_effect = {
+				load_oob = "COL_saltacharcos"
+			}
 	}	
 
 }
@@ -332,7 +344,7 @@ country_event = {
 	id = colombia.12
 	title = colombia.12.t
 	desc = colombia.12.d
-	picture = GFX_report_event_tur_military_affair
+	picture = GFX_report_event_hitler_parade
 	
 	trigger = {
 		original_tag = COL
@@ -348,10 +360,10 @@ country_event = {
 	
 	option = {
 		name = colombia.12.a
-		custom_effect_tooltip = colombia12_tt
-		hidden_effect = {
-			load_oob = "COL_paracaidistas"
-		}
+
+			hidden_effect = {
+				load_oob = "COL_paracaidistas"
+			}
 	}	
 
 }
@@ -361,7 +373,7 @@ country_event = {
 	id = colombia.13
 	title = colombia.13.t
 	desc = colombia.13.d
-	picture = GFX_report_event_gre_greek_cavalry
+	picture = GFX_report_event_hitler_parade
 	
 	trigger = {
 		original_tag = COL
@@ -377,10 +389,10 @@ country_event = {
 	
 	option = {
 		name = colombia.13.a
-		custom_effect_tooltip = colombia13_tt
-		hidden_effect = {
-			load_oob = "COL_pm"
-		}
+
+			hidden_effect = {
+				load_oob = "COL_pm"
+			}
 	}	
 }
 

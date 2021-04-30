@@ -8,45 +8,23 @@ country_event = {
 	id = argentina.1 #External Advisors
 	title = argentina.1.t
 	desc = argentina.1.d
-
-	picture = GFX_CZKE_french_mission_report
-
+	
 	is_triggered_only = yes
 	
 	option = {
 		name = argentina.1.eng
-		trigger = {
-			ENG = {
-				has_civil_war = no
-			}
-		}		
 		ENG = { country_event = { days = 1 id = argentina.5 } } #Event that lets the UK decide whether they want to help or not
 	}
 	option = {
 		name = argentina.1.ger
-		trigger = {
-			GER = {
-				has_civil_war = no
-			}
-		}		
 		GER = { country_event = { days = 1 id = argentina.6 } } #Event that lets Germany decide whether they want to help or not
 	}
 	option = {
 		name = argentina.1.sov
-		trigger = {
-			SOV = {
-				has_civil_war = no
-			}
-		}		
 		SOV = { country_event = { days = 1 id = argentina.7 } } #Event that lets the SOV decide whether they want to help or not
 	}
 	option = {
 		name = argentina.1.usa
-		trigger = {
-			USA = {
-				has_civil_war = no
-			}
-		}		
 		USA = { country_event = { days = 1 id = argentina.8 } } #Event that lets the USA decide whether they want to help or not
 	}
 }
@@ -181,21 +159,15 @@ country_event = {
 	title = argentina.6.t
 	desc = argentina.6.d
 	
-	picture = GFX_report_event_german_advisors_remain
-
 	is_triggered_only = yes
 	option = {
 		name = argentina.6.help
 		ai_chance = { 
-			factor = 100 
+			factor = 0 
 			modifier = {
-				factor = 0
-				OR = {
+				add = 100
+				NOT = {
 					has_war_with = ARG
-					has_opinion = {
-						target = ARG
-						value < -25
-					}
 				}
 			}
 		}
@@ -218,15 +190,11 @@ country_event = {
 	option = {
 		name = argentina.7.help
 		ai_chance = { 
-			factor = 100 
+			factor = 0 
 			modifier = {
-				factor = 0
-				OR = {
+				add = 100
+				NOT = {
 					has_war_with = ARG
-					has_opinion = {
-						target = ARG
-						value < -25
-					}
 				}
 			}
 		}
@@ -249,15 +217,11 @@ country_event = {
 	option = {
 		name = argentina.8.help
 		ai_chance = { 
-			factor = 100 
+			factor = 0 
 			modifier = {
-				factor = 0
-				OR = {
+				add = 100
+				NOT = {
 					has_war_with = ARG
-					has_opinion = {
-						target = ARG
-						value < -25
-					}
 				}
 			}
 		}
@@ -296,17 +260,6 @@ country_event = {
 		name = argentina.10.a
 		ARG = {
 			add_ideas = arg_british_advisors
-			if = {
-				limit = {
-					ENG = {
-						has_government = democratic
-					}
-				}
-				add_popularity = {
-					ideology = democratic
-					popularity = 0.05
-				}
-			}			
 		}
 	}
 }
@@ -316,26 +269,14 @@ country_event = {
 	title = argentina.11.t
 	desc = argentina.11.d
 	
-	picture = GFX_report_event_german_advisors_remain
+	picture = GFX_report_event_soviet_german_soldier_handshake
 
 	is_triggered_only = yes
 	option = {
 		name = argentina.11.a
 		ARG = {
 			add_ideas = arg_german_advisors
-			if = {
-				limit = {
-					GER = {
-						has_government = fascism
-					}
-				}
-				add_popularity = {
-					ideology = fascism
-					popularity = 0.05
-				}
-			}			
 		}
-
 	}
 }
 
@@ -351,17 +292,6 @@ country_event = {
 		name = argentina.12.a
 		ARG = {
 			add_ideas = arg_soviet_advisors
-			if = {
-				limit = {
-					SOV = {
-						has_government = communism
-					}
-				}
-				add_popularity = {
-					ideology = communism
-					popularity = 0.05
-				}
-			}			
 		}
 	}
 }
@@ -378,17 +308,6 @@ country_event = {
 		name = argentina.13.a
 		ARG = {
 			add_ideas = arg_american_advisors
-			if = {
-				limit = {
-					USA = {
-						has_government = democratic
-					}
-				}
-				add_popularity = {
-					ideology = democratic
-					popularity = 0.05
-				}
-			}			
 		}
 	}
 }
@@ -401,51 +320,21 @@ country_event = {
 	picture = GFX_report_event_german_troops
 
 	is_triggered_only = yes
-
-	immediate = {
-		hidden_effect = {
-			save_event_target_as = alliance_inviter
-			FROM = {
-				save_event_target_as = alliance_applicant
-			}
-		}
-	}
-
 	option = {
 		name = argentina.14.a
 		ai_chance = { 
-			factor = 80 
+			factor = 0 
 			modifier = {
-				factor = 0
-				OR = {
+				add = 80
+				NOT = {
 					has_war_with = ARG
-					has_opinion = {
-						target = ARG
-						value < -25
-					}
 				}
 			}
 		}
-		GER = { add_to_faction = ARG }
-	#	ARG = { country_event = { days = 1 id = argentina.42 } }
-		hidden_effect = {
-			set_country_flag = alliance_inviter@ROOT
-			FROM = { set_country_flag = alliance_applicant@ROOT }
-			news_event = { id = news.289 hours = 12 }
-		}		
+		ARG = { country_event = { days = 1 id = argentina.42 } }
 	}
 	option = {
 		name = argentina.14.b
-		ai_chance = { 
-			factor = 20 
-			modifier = {
-				factor = 0
-				ARG = {
-					surrender_progress < 0.01
-				}
-				
-			}
-		}		
 		ARG = { country_event = { days = 1 id = argentina.43 } }
 	}
 }
@@ -920,17 +809,17 @@ country_event = {
 	}
 }
 
-#country_event = {
-#	id = argentina.42 #Argentina accepted into the axis
-#	title = argentina.42.t
-#	desc = argentina.42.d
-#	
-#	is_triggered_only = yes
-#	option = {
-#		name = argentina.42.a
-#		
-#	}
-#}
+country_event = {
+	id = argentina.42 #Argentina accepted into the axis
+	title = argentina.42.t
+	desc = argentina.42.d
+	
+	is_triggered_only = yes
+	option = {
+		name = argentina.42.a
+		GER = { add_to_faction = ARG }
+	}
+}
 
 country_event = {
 	id = argentina.43 #Germany says no

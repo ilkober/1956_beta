@@ -939,7 +939,7 @@ news_event = {
 				tag = SPC
 			}
 		}
-		hidden_effect = { #was effect_tooltip and that was probably a problem
+		effect_tooltip = {
 			if = {
 				limit = {
 					tag = SPC

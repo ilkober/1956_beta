@@ -729,7 +729,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = SPR_anti_fascist_crusade
+			picture = italy_stresa_front
 			
 			modifier = {
 				democratic_acceptance = 100

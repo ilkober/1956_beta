@@ -203,10 +203,7 @@ political_actions = {
 			HUN = {
 				is_friend_or_potential_friend_of_GER = yes
 				NOT = {
-					OR = {
-						is_in_faction_with = YUG
-						has_capitulated = yes
-					}
+					is_in_faction_with = YUG
 				}
 			}
 		}
@@ -214,11 +211,7 @@ political_actions = {
 			HUN = {
 				is_friend_or_potential_friend_of_GER = yes
 				NOT = {
-					OR = {
-						is_in_faction_with = YUG
-						has_capitulated = yes
-					}
-					
+					is_in_faction_with = YUG
 				}
 			}
 		}
@@ -243,10 +236,7 @@ political_actions = {
 			ITA = {
 				is_friend_or_potential_friend_of_GER = yes
 				NOT = {
-					OR = {
-						is_in_faction_with = YUG
-						has_capitulated = yes
-					}
+					is_in_faction_with = YUG
 				}
 			}
 		}
@@ -254,10 +244,7 @@ political_actions = {
 			ITA = {
 				is_friend_or_potential_friend_of_GER = yes
 				NOT = {
-					OR = {
-						is_in_faction_with = YUG
-						has_capitulated = yes
-					}
+					is_in_faction_with = YUG
 				}
 			}
 		}

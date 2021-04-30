@@ -3925,15 +3925,7 @@ focus_tree = {
 		}
 		
 		bypass = {
-			OR = {
-				NOT = { country_exists = GER }
-				GER = {
-					NOT = {
-						has_government = fascism
-					}
-				}
-			}
-			
+			NOT = { country_exists = GER }
 		}
 		
 		available_if_capitulated = no
@@ -4351,7 +4343,7 @@ focus_tree = {
 		completion_reward = {
 			HUN = {
 				if = {
-					limit = { has_country_leader = { name = "Miklós Horthy" ruling_only = yes } }
+					limit = { has_country_leader = { name = "Miklós Horthy" } }
 					kill_country_leader = yes
 					set_global_flag = horthy_died
 				}
@@ -5470,50 +5462,20 @@ focus_tree = {
 		cancel_if_invalid = yes
 		
 		available = {
-			NOT = {
-				has_civil_war = yes
+			ROM = {
+				owns_state = 84
 			}
-			any_other_country = {
-				OR = {
-					owns_state = 84
-					owns_state = 76
-					owns_state = 82
-					owns_state = 83
-				}	
-			}
-			OR = {
-				controls_state = 154
-				controls_state = 764
-			}
-			
-			has_capitulated = no
+			is_neighbor_of = ROM
 		}
 		
 		bypass = {
 			owns_state = 84
 		}
-		will_lead_to_war_with = ROM
+
 
 		completion_reward = {
-			every_country = {
-				limit = {
-					OR = {
-						owns_state = 84
-						owns_state = 76
-						owns_state = 82
-						owns_state = 83
-					}
-					NOT = {
-						OR = {
-							is_puppet_of = ROOT
-							is_in_faction_with = ROOT
-						}
-					}
-				}
-				country_event = { id = austria.5018 days = 1 }
-			}
 			ROM = {
-				
+				country_event = { id = austria.5018 days = 1 }
 			}
 		}
 	}

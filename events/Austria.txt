@@ -349,12 +349,7 @@
 			trigger = {
 				tag = AUS
 			}
-			create_wargoal = {
-				target = PREV
-				expire = 0
-				type = take_state_focus
-				generator = { 82 83 84 76 }
-			}
+			AUS = { declare_war_on = { target = ROM type = annex_everything } }
 			AUS = { add_ideas = AUS_war_for_transylvania }
 		}
 		
@@ -370,12 +365,7 @@
 			83 = { add_claim_by = AUS }
 			82 = { add_claim_by = AUS }
 			84 = { add_claim_by = AUS }
-			create_wargoal = {
-				target = PREV
-				expire = 0
-				type = take_state_focus
-				generator = { 82 83 84 76 }
-			}
+			AUS = { create_wargoal = { type = annex_everything target = ROM } }
 		}
 	}
 	
@@ -1255,7 +1245,7 @@
 		id = austria.1147
 		title = austria.1147.t
 		desc = austria.1147.d
-		picture = GFX_report_event_hungarian_soldiers
+		picture = GFX_report_event_german_troops_paris
 		
 		major = no
 		
@@ -3423,7 +3413,7 @@
 		id = austria.1200
 		title = austria.1200.t
 		desc = austria.1200.d
-		picture = GFX_report_event_soviet_tanks_snow
+		picture = GFX_report_event_tank_factory
 		
 		#major = yes
 
@@ -3782,7 +3772,7 @@
 		id = austria.1209
 		title = austria.1209.t 
 		desc = austria.1209.d 
-		picture = GFX_report_event_soviet_tanks
+		
 		fire_only_once = yes
 
 		trigger = {
@@ -3814,7 +3804,7 @@
 		id = austria.5000
 		title = austria.5000.t
 		desc = austria.5000.d
-		picture = GFX_report_event_german_italian_pact
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -3857,7 +3847,7 @@
 		id = austria.5001
 		title = austria.5001.t
 		desc = austria.5001.d
-		picture = GFX_report_event_generic_read_write
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -3873,7 +3863,7 @@
 		id = austria.5002
 		title = austria.5002.t
 		desc = austria.5002.d 
-		picture = GFX_report_event_generic_riot
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -3898,7 +3888,7 @@
 		id = austria.5003
 		title = austria.5003.t 
 		desc = austria.5003.d 
-		picture = GFX_report_event_generic_sign_treaty3
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -3924,7 +3914,7 @@
 		id = austria.5004
 		title = austria.5004.t 
 		desc = austria.5004.d 
-		picture = GFX_report_event_generic_read_write
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -3939,7 +3929,7 @@
 		id = austria.5005
 		title = austria.5005.t 
 		desc = austria.5005.d 
-		picture = GFX_report_event_czech_soldiers_02
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -3997,7 +3987,7 @@
 		id = austria.5006
 		title = austria.5006.t
 		desc = austria.5006.d
-		picture = GFX_report_event_generic_sign_treaty1
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -4034,7 +4024,7 @@
 		id = austria.5007
 		title = austria.5007.t 
 		desc = austria.5007.d 
-		picture = GFX_report_event_generic_read_write
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -4049,7 +4039,7 @@
 		id = austria.5008
 		title = austria.5008.t 
 		desc = austria.5008.d 
-		picture = GFX_report_event_hungary_parliament
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -4091,7 +4081,7 @@
 		id = austria.5009
 		title = austria.5009.t 
 		desc = austria.5009.d 
-		picture = GFX_report_event_hungary_refused
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -4106,7 +4096,7 @@
 		id = austria.5010
 		title = austria.5010.t 
 		desc = austria.5010.d 
-		picture = GFX_report_event_hungary_parliament
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -4139,7 +4129,7 @@
 		id = austria.5011
 		title = austria.5011.t 
 		desc = austria.5011.d 
-		picture = GFX_report_event_czech_soldiers_01
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -4175,7 +4165,7 @@
 		id = austria.5012
 		title = austria.5012.t 
 		desc = austria.5012.d 
-		picture = GFX_report_event_hungary_southern_slovakia
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -4203,7 +4193,7 @@
 		id = austria.5013
 		title = austria.5013.t 
 		desc = austria.5013.d 
-		picture = GFX_report_event_generic_sign_treaty1
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -4231,7 +4221,7 @@
 		id = austria.5014
 		title = austria.5014.t 
 		desc = austria.5014.d 
-		picture = GFX_report_event_hungarian_soldiers
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -4283,7 +4273,7 @@
 		id = austria.5015
 		title = austria.5015.t 
 		desc = austria.5015.d 
-		picture = GFX_report_event_generic_sign_treaty1
+		
 		fire_only_once = yes
 		
 		is_triggered_only = yes
@@ -4308,8 +4298,8 @@
 		id = austria.5016
 		title = austria.5016.t
 		desc = austria.5016.d
-		picture = GFX_report_event_bul_partisans_plovdiv
-
+		
+		major = yes
 		
 		fire_only_once = yes
 		
@@ -4337,7 +4327,8 @@
 		id = austria.5017
 		title = austria.5017.t
 		desc = austria.5017.d
-		picture = GFX_report_event_bul_partisans_plovdiv
+		
+		major = yes
 		
 		fire_only_once = yes
 		
@@ -4365,7 +4356,8 @@
 		id = austria.5018
 		title = austria.5018.t 
 		desc = austria.5018.d 
-		picture = GFX_report_event_vienna_award_negotiations
+		
+		fire_only_once = yes
 		
 		is_triggered_only = yes
 		
@@ -4374,40 +4366,11 @@
 			ai_chance = {
 				factor = 2
 			}
-			if = {
-				limit = {
-					owns_state = 76		
-				}
-				AUS = {
-					transfer_state = 76
-				}
-			}
-			if = {
-				limit = {
-					owns_state = 83		
-				}
-				AUS = {
-					transfer_state = 83
-				}
-			}
-			if = {
-				limit = {
-					owns_state = 82
-				}
-				AUS = {
-					transfer_state = 82
-				}
-			}
-			if = {
-				limit = {
-					owns_state = 84	
-				}
-				AUS = {
-					transfer_state = 84
-				}
-			}									
-			hidden_effect = {
-				news_event = { id = news.301 days = 1 }
+			AUS = {
+				transfer_state = 76 
+				transfer_state = 83 
+				transfer_state = 82 
+				transfer_state = 84
 			}
 		}
 		
@@ -4417,7 +4380,6 @@
 				factor = 8
 			}
 			AUS = {
-
 				country_event = { id = austria.5019 days = 1 }
 			}
 		}
@@ -4428,7 +4390,8 @@
 		id = austria.5019
 		title = austria.5019.t 
 		desc = austria.5019.d 
-		picture = GFX_report_event_vienna_award_negotiations
+		
+		fire_only_once = yes
 		
 		is_triggered_only = yes
 		
@@ -4437,21 +4400,9 @@
 			ai_chance = {
 				factor = 2
 			}
-			create_wargoal = {
-				target = FROM
-				expire = 0
-				type = take_state_focus
-				generator = { 82 83 84 76 }
-			}			
-		#	custom_effect_tooltip = "Create a wargoal against the owner(s) of Transylvania"
-		#		create_wargoal = {
-		#			target = ROM
-		#			expire = 0
-		#			type = take_state_focus
-		#			generator = { 82 83 84 76 }
-		#		}
-		#	}
-			
+			AUS = {
+				declare_war_on = { target = ROM type = annex_everything }
+			}
 		}
 	}
 	
@@ -4460,7 +4411,8 @@
 		id = austria.5020
 		title = austria.5020.t
 		desc = austria.5020.d
-		picture = GFX_report_event_bul_partisans_plovdiv
+		
+		major = yes
 		
 		fire_only_once = yes
 		
@@ -4488,7 +4440,8 @@
 		id = austria.5021
 		title = austria.5021.t
 		desc = austria.5021.d
-		picture = GFX_report_event_romanian_soldiers
+		
+		major = yes
 		
 		fire_only_once = yes
 		
@@ -4516,7 +4469,7 @@
 		title = austria.5022.t
 		desc = austria.5022.d
 		
-		picture = GFX_report_event_hungary_gains_transylvania
+		major = yes
 		
 		fire_only_once = yes
 		
@@ -4577,7 +4530,7 @@
 		title = austria.5023.t
 		desc = austria.5023.d
 		
-		picture = GFX_report_event_hungary_gains_transylvania
+		major = yes
 		
 		fire_only_once = yes
 		

@@ -494,7 +494,7 @@ ideas = {
 		
 		arg_british_advisors = {
 
-			picture = eng_guided_by_britain
+			picture = generic_army_war_college
 
 			removal_cost = -1
 			
@@ -505,6 +505,8 @@ ideas = {
 			allowed_civil_war {
 				always = no
 			}
+			
+			picture = idea_general_staff
 			
 			research_bonus = {
 				cat_grand_battle_plan = 0.1
@@ -513,7 +515,7 @@ ideas = {
 		
 		arg_german_advisors = {
 
-			picture = german_advisors
+			picture = generic_army_war_college
 			removal_cost = -1
 			
 			allowed = {
@@ -523,6 +525,8 @@ ideas = {
 			allowed_civil_war {
 				always = no
 			}
+			
+			picture = idea_general_staff
 			
 			research_bonus = {
 				cat_mobile_warfare = 0.1
@@ -531,7 +535,7 @@ ideas = {
 		
 		arg_soviet_advisors = {
 
-			picture = saf_soviet_advisers
+			picture = generic_army_war_college
 			removal_cost = -1
 			
 			allowed = {
@@ -542,6 +546,7 @@ ideas = {
 				always = no
 			}
 			
+			picture = idea_general_staff
 			
 			research_bonus = {
 				cat_mass_assault = 0.1
@@ -560,6 +565,8 @@ ideas = {
 			allowed_civil_war {
 				always = no
 			}
+			
+			picture = idea_general_staff
 			
 			research_bonus = {
 				cat_superior_firepower = 0.1
