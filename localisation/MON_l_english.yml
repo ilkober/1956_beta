@@ -35,26 +35,32 @@ mon_purged_intellectuals_flag:0 "Intellectuals Purged"
 mon_purged_party_flag:0 "Party Members Purged"
 mon_purged_lamas_flag:0 "Lamas Purged"
 mon_new_party_elite_formed_flag:0 "New Party Elite Established"
+purged_by_genden_small_flag:0 "Purged by Genden"
+purged_by_genden_big_flag:0 "Purged by Genden"
 
 ### ideas ###
 MON_amandyn_amar:0 "Amandyn Amar"
 MON_davaagijn_namsrai:0 "Davaagijn Namsrai"
 MON_dorjjavyn_luvsansharov:0 "Dorjjavyn Luvsansharov"
+MON_dansranbilegiin_dogsom:0 "Dansranbilegiin Dogsom"
 MON_khas_ochiryn_luvsan_dorj:0 "Khas-Ochiryn Luvsan-Dorj"
 MON_gelegdorjiin_demid:0 "Gelegdorjiin Demid"
 MON_demberel_damchaa:0 "Demberel Damchaa"
 MON_tsendiin_olzvoy:0 "Tsendiin Olzvoy"
 MON_lodongiin_dandar:0 "Lodongiin Dandar"
 MON_butochiyn_tsog:0 "Butochiyn Tsog"
+MON_horloogiyn_choibalsan:0 "Horloogiyn Choibalsan"
 
 MON_shirnengiin_ayuush:0 "Shirmemgiin Ayuush"
 MON_jamtsangiin_damdinsueren:0 "Jamtsangiin Damdisueren"
 MON_suekhbaataryn_yanjmaa:0 "Suekhbaataryn Yanjmaa"
 
 MON_yumjaagiin_tsedenbal:0 "Yumjaagiin Tsedenbal"
-MON_solomyn_luvsan:0 "Solomyn Luvsan"
+MON_solomyn_luvsan:0 "Sonomyn Luvsan"
 MON_gonchigiin_bumtsend:0 "Gonchigiin Bumtsend"
-MON_dashhin_damba:0 "Dashhin Damba"
+MON_dashhin_damba:0 "Dashiin Damba"
+
+mongolia_anti_genden_civil_war_tt:0 "§RThis will lead to civil war in the future!§!"
 
 
 MON_ill_educated_population:0 "Ill-Educated Population"
@@ -109,6 +115,8 @@ Mon_party_purged_desc:0 "Reshuffle and arrests were conducted, leaving great sca
 Mon_lamas_purged:0 "Lamas Purged"
 Mon_lamas_purged_desc:0 "Many members of the religious institutions have fled the country or were forced into hiding due to the recent government purges."
 MON_atheism_propaganda:0 "Atheism Propaganda"
+MON_cult_of_choibalsan_idea:0 "Cult of Choibalsan"
+
 
 Mongolbank_very_high_funds:0 "Mongolbank: §GVery high funds§!"
 Mongolbank_very_high_funds_desc:0 "Hard to operate properly, yet the economy is booming!"
@@ -159,11 +167,28 @@ MON_spread_atheist_propaganda:0 "Spread Atheist Propaganda"
 MON_remove_nominal_leadership:0 "Remove Nominal Leadership"
 MON_redraw_the_constitution:0 "Redraw the Constitution"
 
+MON_reinforce_eastern_border:0 "Reinforce Eastern Border"
+MON_cult_of_choibalsan:0 "Cult of Personality"
 
-
-#
+# pro-Genden #
 MON_proudly_alone:0 "Proudly Alone"
 MON_proudly_alone_desc:0 "Genden's concern of growing Soviet influence over our contry has lead to a precarious situation in which our current leadership openly opposes any sort of alliance with Soviets, fearing to become a satellite state of latter. Our border patrols are reassigned to the new locations with government officialy proclaiming its neutral foreign policy."
+MON_strengthten_genden:0 "Strengthen Genden's Positions"
+MON_remove_stalinist_sympathisers:0 "Issue with Stalinist Sympathisers"
+
+# trotskyist Mongolia #
+MON_invite_chen_duxiu:0 "Invite Chen Duxiu"
+
+
+#pro-Soviet puppet #
+MON_empower_eldev_ochir:0 "Empower Eldev-Ochir"
+MON_show_loyalty_to_the_cause:0 "Show Loyalty to the Cause"
+MON_join_soviet_big_brother:0 "Join Soviet Big Brother"
+
+MON_soviet_puppet_tooltip:0 "§RMongolia will become a§! §HPuppet§! §Rof [SOV.GetNameDef]§!\n"
+MON_soviet_puppet_tooltip_TFV:0 "§RMongolia will become a§! §HDominion§! §Rof [SOV.GetNameDef]§!\n"
+
+
 # industry #
 MON_expand_elementary_schools:0 "Expand Elementary Schools"
 MON_expand_elementary_schools_desc:0 "Started originally in 1936, an expansion of the elementary schools is directed as a first step to battle the illiteracy across the population. By 1934 only 10% of the population could read and write, while the basic learning program was only two years long. Considering the quality of education abroad, the length and availability of the education must be increased."
@@ -212,3 +237,23 @@ mongol.17.t:0 "Problem with Llama"
 mongol.17.d:0 "Buddhism is deeply entrenched in minds and hearts of our citizens with 10% of our countries population being llamas and monks. Such massive power block cannot be neglected: rebellions of 1932 and Lhumbe plot of 1933 clearly indicate the need of intervention before the situation becomes too tense. Luckily, we already have an experience with limiting llama's power since Choibalsan rise to power. \n\nStaying loyal to the [SOV.GetAdjective]s, their leader [SOV.GetLeader] and principles of communism implies that we shall conduct this operation as soon as possible."
 mongol.17.a:0 "We have no other choice."
 mongol.17.b:0 "The buddhism carries the true spirit of [MON.GetAdjective] people!"
+
+mongol.40.t:0 "Dealing with Soviet Sympathisers"
+mongol.40.d:0 "Even though [MON.GetLeader] has managed to escape the direct [SOV.GetAdjective] involvement into the internal affairs of the [MON.GetName], it remains uncertain whether the [SOV.GetAdjective] leadeship won't try and to overthrow the reckless free-thinker Genden is. \n\nIf we want to ensure that [MON.GetName] will follow into the bright communist future without any sort of political or military insurrection, it might be wise pacify any pro-[SOV.GetAdjective] agitators and propagandists remaining in the government. "
+mongol.40.a:0 "We have other issues at our hands now. This can wait."
+mongol.40.b:0 "Remove those who openly opposed Genden."
+mongol.40.c:0 "Arrest the entire inner party leadership!"
+
+
+
+mongol.100.t:0 "Mongolia Requests Our Protection"
+mongol.100.d:0 "Realising the mistakes of the previous government and adopting our collectivization policies together with strong persecution of religious institutions, [MON.GetName] is seeking to return under the banner of the socialism. [MON.GetLeader] has arrived in person to Moscow last night and is now avaiting an audience with [SOV.GetLeader] to inform his of what our spies have already known for far too long: \n\nThey are willing to submit to our consultation of foreign policy and allow our troops to enter their borders in exchange for our close cooperation. \n\nHow shall we respond?"
+mongol.100.a:0 "This is an interesting opportunity."
+mongol.100.b:0 "We are not interested."
+
+mongol.101.t:0 "[SOV.GetName] Accepts"
+mongol.101.d:0 "[SOV.GetLeader] has agreed to our plea for assistance. [MON.GetLeader] is currently in Moscow, and the signing of the treaty is well underway. For the greater good an further cooperation of the  [SOV.GetAdjective] and  [MON.GetAdjective] people!"
+mongol.101.a:0 "We are more then happy to follow Soviet assistance!"
+mongol.102.t:0 "[SOV.GetName] Declines"
+mongol.102.d:0 "[SOV.GetLeader] has expressed little interest in our pleas for assistance. It seems that we must turn elsewhere for help."
+mongol.102.a:0 "Maybe its for our own good."

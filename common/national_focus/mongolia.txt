@@ -433,8 +433,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MON_stop_japanese_raids
-		icon = GFX_goal_molotov_ribbentrop_pact
+		id = MON_reinforce_eastern_border
+		icon = GFX_goal_JAP_defence
 		x = 0
 		y = 1
 		cost = 10
@@ -442,11 +442,20 @@ focus_tree = {
 		prerequisite = { focus = MON_invite_soviet_advisors }
 		available_if_capitulated = yes
 
+		bypass = {
+			has_war_with = JAP
+		}
 		ai_will_do = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_advisors }
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 2
+				category = land_doctrine
+			}
 		}
 	}
 
@@ -834,7 +843,7 @@ focus_tree = {
 				}
 				remove_ideas = MON_consolidated_power_3
 			}
-			MON = { country_event = mongol.7 }
+			country_event = mongol.7 
 			add_country_leader_trait = dictator
 		}
 	}
@@ -859,20 +868,20 @@ focus_tree = {
 
 	focus = {
 		id = MON_cult_of_choibalsan
-		icon = GFX_goal_molotov_ribbentrop_pact
+		icon = GFX_goal_extensive_conscription_communism
 		x = 3
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = MON_remove_nominal_leadership
 		prerequisite = { focus = MON_remove_nominal_leadership }
-		prerequisite = { focus = MON_stop_japanese_raids }
+		prerequisite = { focus = MON_reinforce_eastern_border }
 		available_if_capitulated = yes
 
 		ai_will_do = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = { remove_idea = MON_soviet_NKVD_agents add_idea = MON_soviet_advisors }
+			add_ideas = MON_cult_of_choibalsan_idea
 		}
 	}
 
@@ -1022,12 +1031,17 @@ focus_tree = {
 
 	focus = {
 		id = MON_strengthten_genden
-		icon = gfx_fifth_column
+		icon = GFX_focus_prc_maoism	
 		x = -16
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = MON_proudly_alone
 		prerequisite = { focus = MON_proudly_alone }
+		mutually_exclusive = {
+			focus = MON_invite_exiles_of_1932
+			focus = MON_support_right_movement_of_1926
+			focus = MON_legacy_of_bogd_khanate
+		}
 		available_if_capitulated = yes
 
 		available = {
@@ -1044,13 +1058,14 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_political_power = 150
+			add_political_power = 80
+			remove_ideas = MON_unpopular_government
 		}
 	}
 
 	focus = {
 		id = MON_remove_stalinist_sympathisers
-		icon = gfx_fifth_column
+		icon = GFX_goal_lenin3
 		x = 0
 		y = 1
 		cost = 10
@@ -1072,7 +1087,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_political_power = 150
+			country_event = { id = mongol.40 }
 		}
 	}
 
@@ -1561,6 +1576,11 @@ focus_tree = {
 		cost = 10
 		relative_position_id = MON_proudly_alone
 		prerequisite = { focus = MON_proudly_alone }
+		mutually_exclusive = {
+			focus = MON_strengthten_genden
+			focus = MON_support_right_movement_of_1926
+			focus = MON_legacy_of_bogd_khanate
+		}
 		available_if_capitulated = yes
 
 		available = {
@@ -1633,6 +1653,7 @@ focus_tree = {
 		cost = 10
 		relative_position_id = MON_depose_genden
 		prerequisite = { focus = MON_depose_genden focus = MON_another_govenment_reshuffle }
+		mutually_exclusive = { focus = MON_invite_chen_duxiu }
 		available_if_capitulated = yes
 
 		available = {
@@ -1651,25 +1672,40 @@ focus_tree = {
 
 	focus = {
 		id = MON_invite_chen_duxiu
-		icon = gfx_fifth_column
+		icon = GFX_goal_support_fourth_int
 		x = -2
 		y = 1
-		cost = 10
+		cost = 5
 		relative_position_id = MON_another_govenment_reshuffle
 		prerequisite = { focus = MON_depose_genden focus = MON_another_govenment_reshuffle }
+		mutually_exclusive = { focus = MON_empower_eldev_ochir }
 		available_if_capitulated = yes
 
 		available = {
-			AND = {
-				has_government = communism
-			}		
+			has_government = communism	
 		}
 		ai_will_do = {
 			factor = 0		
 		}
 
 		completion_reward = {
-			add_political_power = 150
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Chen Duxiu"
+				desc = "POLITICS_CHEN_DUXIU_DESC"
+				picture = "gfx/leaders/PRC/r56_portrait_PRC_Chen_Duxiu.dds"
+				expire = "1965.1.1"
+				ideology = leninism
+				traits = {
+					PRC_trotskyist
+				}
+			}
+			PRC = {
+				add_opinion_modifier = {
+					target = MON
+					modifier = hostile_status
+				}
+			}
 		}
 	}
 
@@ -2092,6 +2128,7 @@ focus_tree = {
 		cost = 10
 		relative_position_id = MON_empower_eldev_ochir
 		prerequisite = { focus = MON_empower_eldev_ochir  }
+
 		available_if_capitulated = yes
 
 		available = {
@@ -2231,7 +2268,7 @@ focus_tree = {
 
 	focus = {
 		id = MON_show_loyalty_to_the_cause
-		icon = gfx_fifth_column
+		icon = GFX_focus_chi_mission_to_the_soviet_union
 		x = 3
 		y = 1
 		cost = 10
@@ -2240,22 +2277,34 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		available = {
-			AND = {
-				has_government = communism
-			}		
+			has_government = communism
+			SOV = { is_faction_leader = yes }
+			is_puppet = no
+			is_in_faction = no
+			NOT = { has_war_with = SOV }
+			NOT = {
+				any_other_country = {
+					is_in_faction_with = SOV
+					has_war_with = MON
+				}
+			}
 		}
+		bypass = {
+			is_in_faction_with = SOV
+		}
+
 		ai_will_do = {
-			factor = 0		
+			factor = 1		
 		}
 
 		completion_reward = {
-			add_political_power = 150
+			SOV = { country_event = generic.2 }
 		}
 	}
 
 	focus = {
 		id = MON_join_soviet_big_brother
-		icon = gfx_fifth_column
+		icon = GFX_focus_CZE_german_puppet
 		x = 0
 		y = 1
 		cost = 10
@@ -2264,16 +2313,26 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		available = {
-			AND = {
+			is_puppet = no
+			has_government = communism
+			SOV = {
 				has_government = communism
-			}		
+			}	
+			is_in_faction_with = SOV
 		}
 		ai_will_do = {
 			factor = 0		
 		}
 
 		completion_reward = {
-			add_political_power = 150
+			if = {
+				limit = { has_dlc = "Together for Victory"}
+				custom_effect_tooltip = MON_soviet_puppet_tooltip_TFV
+				else = {
+					custom_effect_tooltip = MON_soviet_puppet_tooltip
+				}
+			}
+			SOV = { country_event = mongol.100 }
 		}
 	}
 
@@ -2285,6 +2344,11 @@ focus_tree = {
 		cost = 10
 		relative_position_id = MON_proudly_alone
 		prerequisite = { focus = MON_proudly_alone }
+		mutually_exclusive = {
+			focus = MON_strengthten_genden
+			focus = MON_invite_exiles_of_1932
+			focus = MON_legacy_of_bogd_khanate
+		}
 		available_if_capitulated = yes
 
 		available = {
@@ -2699,6 +2763,11 @@ focus_tree = {
 		cost = 10
 		relative_position_id = MON_proudly_alone
 		prerequisite = { focus = MON_proudly_alone focus = MON_openly_renounce_soviet_protection }
+		mutually_exclusive = {
+			focus = MON_strengthten_genden
+			focus = MON_invite_exiles_of_1932
+			focus = MON_support_right_movement_of_1926
+		}
 		available_if_capitulated = yes
 
 		available = {
@@ -3484,10 +3553,9 @@ focus_tree = {
 	focus = {
 		id = MON_transfer_the_funds_of_mongolbank
 		icon = GFX_focus_mex_privatisation
-		x = -20
+		x = -26
 		y = 0
 		cost = 10
-
 		available_if_capitulated = yes
 
 		ai_will_do = {
@@ -3501,9 +3569,11 @@ focus_tree = {
 	focus = {
 		id = MON_expand_elementary_schools
 		icon = GFX_goal_research_silver_cooperation
-		x = -26
-		y = 0
+		x = 2
+		y = 1
 		cost = 10
+		relative_position_id = MON_transfer_the_funds_of_mongolbank
+		prerequisite = { focus = MON_transfer_the_funds_of_mongolbank }
 
 		available_if_capitulated = yes
 
@@ -3516,28 +3586,269 @@ focus_tree = {
 	}
 
 	focus = {
-		id = MON_student_exchange_programs
-		icon = GFX_focus_research
-		x = -4
+		id = MON_improve_machine_tools
+		icon = GFX_goal_research_silver_cooperation
+		x = 0
 		y = 1
 		cost = 10
 		relative_position_id = MON_transfer_the_funds_of_mongolbank
-		prerequisite = { focus = MON_transfer_the_funds_of_mongolbank } 
-		prerequisite = { focus = MON_expand_elementary_schools }
+		prerequisite = { focus = MON_transfer_the_funds_of_mongolbank }
 
 		available_if_capitulated = yes
-		available = {
-			is_in_faction = yes
-		}
+
 		ai_will_do = {
 			factor = 50		
 		}
 		completion_reward = {
-			swap_ideas = {
-				remove_idea = MON_ill_educated_population
-				add_idea = MON_population_learning
-			}
-			add_research_slot = 1
+			add_ideas = Mon_elementary_schools
 		}
 	}
+
+	focus = {
+		id = MON_expand_the_railroads
+		icon = GFX_goal_research_silver_cooperation
+		x = -2	
+		y = 1
+		cost = 10
+		relative_position_id = MON_transfer_the_funds_of_mongolbank
+		prerequisite = { focus = MON_transfer_the_funds_of_mongolbank }
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mon_elementary_schools
+		}
+	}
+
+	focus = {
+		id = Pastures_into_farms
+		icon = GFX_focus_mex_privatisation
+		x = -4
+		y = 2
+		cost = 10
+
+		prerequisite = { focus = MON_transfer_the_funds_of_mongolbank }
+		mutually_exclusive = { focus = End_reliance_on_animal_husbandry }
+
+		relative_position_id = MON_transfer_the_funds_of_mongolbank
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+	focus = {
+		id = End_reliance_on_animal_husbandry
+		icon = GFX_focus_mex_privatisation
+		x = 8
+		y = 0
+		cost = 10
+		prerequisite = { focus = MON_transfer_the_funds_of_mongolbank }
+		mutually_exclusive = { focus = Pastures_into_farms}
+
+		relative_position_id = Pastures_into_farms
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+
+	focus = {
+		id = MON_support_arats
+		icon = GFX_focus_mex_privatisation
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = Pastures_into_farms
+		prerequisite = { focus = Pastures_into_farms }
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+	focus = {
+		id = MON_expand_woolwashing_facilities 
+		icon = GFX_focus_mex_privatisation
+		x = 2
+		y = 1
+		cost = 10
+		relative_position_id = Pastures_into_farms
+		prerequisite = { focus = Pastures_into_farms focus = End_reliance_on_animal_husbandry }
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+	focus = {
+		id = MON_build_energokombinat
+		icon = GFX_focus_mex_privatisation
+		x = 4
+		y = 1
+		cost = 10
+		relative_position_id = Pastures_into_farms
+		prerequisite = { focus = Pastures_into_farms focus = End_reliance_on_animal_husbandry }
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+	focus = {
+		id = MON_build_mechanical_factory
+		icon = GFX_focus_mex_privatisation
+		x = -2
+		y = 1
+		cost = 10
+		relative_position_id = End_reliance_on_animal_husbandry
+		prerequisite = { focus = Pastures_into_farms focus = End_reliance_on_animal_husbandry }
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+	focus = {
+		id = MON_promcombinat_expansion
+		icon = GFX_focus_mex_privatisation
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = End_reliance_on_animal_husbandry
+		prerequisite = { focus = End_reliance_on_animal_husbandry }
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+	focus = {
+		id = MON_new_veterinary_facilities
+		icon = GFX_focus_mex_privatisation
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = MON_support_arats
+		prerequisite = { focus = MON_support_arats }
+		prerequisite = { focus = MON_expand_woolwashing_facilities }
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+
+	focus = {
+		id = MON_ulan_bator_promcombinat
+		icon = GFX_focus_mex_privatisation
+		x = -1
+		y = 1
+		cost = 10
+		relative_position_id = MON_build_energokombinat
+		prerequisite = { focus = MON_build_energokombinat }
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+	focus = {
+		id = MON_improve_mining_facilities
+		icon = GFX_focus_mex_privatisation
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = MON_build_energokombinat
+		prerequisite = { focus = MON_build_energokombinat }
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+	focus = {
+		id = MON_armament_expansion
+		icon = GFX_focus_mex_privatisation
+		x = 1
+		y = 1
+		cost = 10
+		relative_position_id = MON_build_mechanical_factory
+		prerequisite = { focus = MON_build_mechanical_factory }
+		prerequisite = { focus = MON_promcombinat_expansion }
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+	focus = {
+		id = MON_new_research_centres
+		icon = GFX_focus_mex_privatisation
+		x = 3
+		y = 1
+		cost = 10
+		relative_position_id = MON_new_veterinary_facilities
+		prerequisite = { focus = MON_armament_expansion focus = MON_new_veterinary_facilities }
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 50		
+		}
+		completion_reward = {
+			add_ideas = Mongolbank_very_high_funds
+		}
+	}
+
+
+
+
 }

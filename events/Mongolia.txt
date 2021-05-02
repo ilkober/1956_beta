@@ -488,3 +488,168 @@ country_event = {
 		add_political_power = -100
 	}
 }
+
+
+
+country_event = { #Genden: Remove/purge soviet sympatisers
+	id = mongol.40
+	title = mongol.40.t
+	desc = mongol.40.d
+	picture = GFX_report_event_china_politicians_captured
+
+	fire_only_once = yes
+		
+	option = {
+		name = mongol.40.a
+		add_political_power = 40
+		add_stability = -0.1
+		custom_effect_tooltip = mongolia_anti_genden_civil_war_tt
+	}
+
+	option = {
+		name = mongol.40.b
+		add_political_power = -20
+		add_stability = 0.05
+		set_country_flag = purged_by_genden_small_flag
+		custom_effect_tooltip = remove_political_advisor
+		show_ideas_tooltip = MON_dorjjavyn_luvsansharov
+		show_ideas_tooltip = MON_dansranbilegiin_dogsom
+		custom_effect_tooltip = remove_chief_of_army
+		show_ideas_tooltip = MON_horloogiyn_choibalsan
+		hidden_effect = {
+			remove_ideas = MON_dorjjavyn_luvsansharov
+			remove_ideas = MON_dansranbilegiin_dogsom
+			remove_ideas = MON_horloogiyn_choibalsan
+		}
+		SOV = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = small_decrease
+			}
+		}
+	}
+
+	option = {
+		name = mongol.40.c
+		add_political_power = -50
+		add_stability = 0.10
+		set_country_flag = purged_by_genden_big_flag
+		custom_effect_tooltip = remove_political_advisor
+		show_ideas_tooltip = MON_dorjjavyn_luvsansharov
+		show_ideas_tooltip = MON_dansranbilegiin_dogsom
+		show_ideas_tooltip = MON_amandyn_amar
+		show_ideas_tooltip = MON_khas_ochiryn_luvsan_dorj
+		custom_effect_tooltip = remove_chief_of_army
+		show_ideas_tooltip = MON_horloogiyn_choibalsan
+		hidden_effect = {
+			remove_ideas = MON_dorjjavyn_luvsansharov
+			remove_ideas = MON_dansranbilegiin_dogsom
+			remove_ideas = MON_amandyn_amar
+			remove_ideas = MON_khas_ochiryn_luvsan_dorj
+			remove_ideas = MON_horloogiyn_choibalsan
+		}
+		SOV = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = medium_decrease
+			}
+		}
+	}
+}
+
+
+
+country_event = {   #taken from the polish tree and adopted for the needs -> becoming soviet puppet cause why not?
+	id = mongol.100
+	title = mongol.100.t
+	desc = mongol.100.d
+	picture = GFX_report_event_josef_beck
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mongol.100.a
+		ai_chance = {
+			factor = 80
+		}
+		every_other_country = {
+			limit = {
+				has_war_with = MON
+				NOT = { is_in_faction_with = SOV }
+			}
+			SOV = {
+				declare_war_on = {
+					type = puppet_wargoal_focus
+					target = PREV
+				}
+			}
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory"}
+			custom_effect_tooltip = MON_soviet_puppet_tooltip_TFV
+			hidden_effect = {
+				SOV = { 
+					set_autonomy = {
+						target = MON
+						autonomous_state = autonomy_dominion
+						freedom_level = 0.55
+					}
+				}
+			}
+			else = {
+				custom_effect_tooltip = MON_soviet_puppet_tooltip
+				hidden_effect = {
+					SOV = { puppet = MON }
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = { SOV = { has_government = communism } }
+				MON = {
+					set_politics = {
+						ruling_party = communism #game will crash if this part isn't included
+						elections_allowed = no
+					}
+				}
+			}
+		}
+		MON = { country_event = mongol.101 }
+	}
+	
+	option = {
+		name = mongol.100.b
+		ai_chance = {
+			factor = 20
+		}
+		MON = { country_event = mongol.102 }
+	}
+}
+
+#Soviet Accepts
+country_event = {
+	id = mongol.101
+	title = mongol.101.t
+	desc = mongol.101.d
+	picture = GFX_report_event_stalin_02
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mongol.101.a
+	}
+}
+
+#Soviet Declines
+country_event = {
+	id = mongol.102
+	title = mongol.102.t
+	desc = mongol.102.d
+	picture = GFX_report_event_stalin_01
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = mongol.102.a
+	}
+}
