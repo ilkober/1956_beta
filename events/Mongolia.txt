@@ -172,12 +172,13 @@ country_event = { #Amar is purged
 			ideology = marxism
 			traits = {
 				army_connections
+				dictator
 			}
 		}
 		remove_ideas = MON_powerful_choibalsan
 		add_timed_idea = {
 			idea = officers_purged_civil_war
-			days = 10
+			days = 70
 		}
 	}
 }

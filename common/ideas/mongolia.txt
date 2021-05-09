@@ -88,6 +88,18 @@ ideas = {
 
 
 		# industrial ideas #
+		MON_weak_currency = {
+			picture = HOL_reliance_on_the_gold_standard
+			removal_cost = -1
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			
+			modifier = {
+				trade_laws_cost_factor = 1.5
+				economy_cost_factor = 1.5
+			}	
+		}
+
 		MON_new_course_policy = {
 			removal_cost = -1
 			picture = FRA_factory_strikes
@@ -127,6 +139,198 @@ ideas = {
 				conscription_factor = -0.60
 				army_morale_factor = 0.10
 			}	
+		}
+
+		MON_animal_husbandry_prioritised = {
+			
+			allowed = {
+				original_tag = MON
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_agrarian_society
+				
+			removal_cost = -1
+				
+			modifier = {
+				consumer_goods_factor = -0.03
+				industrial_capacity_factory = -0.05
+				conscription_factor = -0.30
+				army_morale_factor = 0.10
+			}	
+		}
+
+		MON_industrial_growth_prioritised = {
+			
+			allowed = {
+				original_tag = MON
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = ast_all_in
+				
+			removal_cost = -1
+				
+			modifier = {
+				consumer_goods_factor = 0.05	
+				industrial_capacity_factory = 0.15
+			}	
+		}
+
+		MON_encourage_trade = {
+			allowed = { 
+				original_tag = MON
+			}
+			allowed_civil_war = { 
+				always = yes
+			}
+			picture = generic_foreign_capital	
+			removal_cost = -1	
+			modifier = {
+				trade_opinion_factor = 0.2
+				industrial_capacity_factory = 0.05
+			}	
+		}
+
+		MON_supported_the_arats = {
+			allowed = { 
+				original_tag = MON
+			}
+			allowed_civil_war = { 
+				always = yes
+			}
+			picture = generic_agrarian_society	
+			removal_cost = -1	
+			modifier = {
+				global_building_slots_factor = 0.20
+				consumer_goods_factor = -0.06	
+			}	
+		}
+
+		MON_promcombinat_new_facilities = {
+			picture = generic_production_bonus	
+			removal_cost = -1
+			allowed = { always = no}
+			allowed_civil_war = { 
+				always = yes
+			}	
+			modifier = {
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.10
+			}	
+		}
+
+		MON_improved_mining_facilities = {
+			picture = man_five_year_plan_industry
+			removal_cost = -1
+			allowed = { always = no}
+			allowed_civil_war = { 
+				always = yes
+			}
+			modifier = {
+				local_resources_factor = 0.10
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		Mongolbank_very_high_funds = {
+			picture = chi_hyper_inflation5
+			allowed = { always = no }
+			allowed_civil_war = { 
+				always = yes
+			}
+			modifier = {
+				political_power_gain = -0.30
+				consumer_goods_factor = -0.15
+			}
+		}
+
+		Mongolbank_high_funds = {
+			picture = chi_hyper_inflation4
+			allowed = { always = no }
+			allowed_civil_war = { 
+				always = yes
+			}
+			modifier = {
+				political_power_gain = -0.20
+				consumer_goods_factor = -0.1
+			}
+		}
+
+		Mongolbank_moderate_funds = {
+			picture = chi_hyper_inflation3
+			allowed = { always = no }
+			allowed_civil_war = { 
+				always = yes
+			}
+			modifier = {
+				political_power_gain = -0.10
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		Mongolbank_low_funds = {
+			picture = chi_hyper_inflation2
+			allowed = { always = no }
+			allowed_civil_war = { 
+				always = yes
+			}
+			modifier = {
+				political_power_gain = 0.10
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		Mongolbank_bankrupt = {
+			picture = chi_hyper_inflation
+			allowed = { always = no}
+			allowed_civil_war = { 
+				always = yes
+			}
+			modifier = {
+				political_power_gain = -0.10
+				consumer_goods_factor = 0.10
+			}
+		}
+
+		#Helping Mongolbank modifiers #
+		MON_reduced_scientists_funding = {
+			picture = generic_production_bonus
+			allowed = { always = no}
+			allowed_civil_war = { 
+				always = yes
+			}
+			modifier = {
+				research_speed_factor = -0.04
+			}
+		}
+
+		MON_buying_currency_abroad = {
+			picture = generic_production_bonus
+			allowed = { always = no}
+			allowed_civil_war = { 
+				always = yes
+			}
+			modifier = {
+				consumer_goods_factor = 0.04
+			}
+		}
+
+		MON_production_quotas_increased = {
+			picture = generic_production_bonus
+			allowed = { always = no}
+			allowed_civil_war = { 
+				always = yes
+			}
+			modifier = {
+				industrial_capacity_factory = -0.15
+			}
 		}
 
 
@@ -447,9 +651,8 @@ ideas = {
 			}
 
 			modifier = {
-				political_power_factor = 0.1
+				political_power_factor = 0.05
 				communism_drift = 0.1
-				consumer_goods_factor = 0.03
 			}
 		}
 
@@ -474,76 +677,43 @@ ideas = {
 			}
 		}
 
-		Mongolbank_very_high_funds = {
-			picture = hol_reliance_on_the_gold_standard
+		MON_hudonets_empowered = {
+			picture = jap_zaibatsu
 
 			allowed = {
 				original_tag = MON
 			}
 
 			allowed_civil_war = {
-				always = no
+				always = yes
 			}
 
 			modifier = {
-				political_power_gain = -0.30
-				consumer_goods_factor = -0.15
+				global_building_slots_factor = 0.15
+				industrial_capacity_factory = 0.05
+				MONTHLY_POPULATION = 0.1
 			}
 		}
 
-		Mongolbank_high_funds = {
-			picture = hol_reliance_on_the_gold_standard
+		MON_incorporated_buddhism = {
+			picture = generic_political_support
 
 			allowed = {
 				original_tag = MON
 			}
 
 			allowed_civil_war = {
-				always = no
-			}
-
-			modifier = {
-				political_power_gain = -0.20
-				consumer_goods_factor = -0.1
-			}
-		}
-
-		Mongolbank_moderate_funds = {
-			picture = hol_reliance_on_the_gold_standard
-
-			allowed = {
-				original_tag = MON
-			}
-
-			allowed_civil_war = {
-				always = no
-			}
-
-			modifier = {
-				political_power_gain = -0.10
-				consumer_goods_factor = -0.05
-			}
-		}
-
-		Mongolbank_low_funds = {
-			picture = hol_reliance_on_the_gold_standard
-
-			allowed = {
-				original_tag = MON
-			}
-
-			allowed_civil_war = {
-				always = no
+				always = yes
 			}
 
 			modifier = {
 				political_power_gain = 0.10
-				consumer_goods_factor = 0.5
+				stability_weekly = 0.003
 			}
 		}
 
-		Mongolbank_bankrupt = {
-			picture = hol_reliance_on_the_gold_standard
+		MON_get_rich_idea  = {
+			picture = ROM_carol_ii_greed
 
 			allowed = {
 				original_tag = MON
@@ -554,10 +724,29 @@ ideas = {
 			}
 
 			modifier = {
-				political_power_gain = 0.10
-				consumer_goods_factor = 0.10
+				consumer_goods_factor = 0.1
+				political_power_gain = -0.1
 			}
 		}
+
+		MON_new_course_genden  = {
+			picture = FRA_factory_strikes
+
+			allowed = {
+				original_tag = MON
+			}
+
+			allowed_civil_war = {
+				always = no
+			}
+
+			modifier = {
+				global_building_slots_factor = 0.15
+				industrial_capacity_factory = 0.15
+				consumer_goods_factor = -0.02
+			}
+		}
+
 	}
 
 	political_advisor = {
@@ -750,6 +939,21 @@ ideas = {
 				factor = 1
 			}
 		}
+
+		MON_horloogiyn_choibalsan = {
+			
+			picture = generic_army_asia_2
+
+			allowed = {
+				original_tag = MON
+			}
+			
+			traits = { army_chief_morale_2 }
+			
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	air_chief = {
@@ -837,21 +1041,6 @@ ideas = {
 				factor = 1
 			}
 		}
-
-		MON_horloogiyn_choibalsan = {
-			
-			picture = generic_army_asia_2
-
-			allowed = {
-				original_tag = MON
-			}
-			
-			traits = { army_chief_morale_2 }
-			
-			ai_will_do = {
-				factor = 1
-			}
-		}
 	}
 
 
@@ -891,5 +1080,53 @@ ideas = {
 	}
 
 
+	#industrial concserns #
 
+	industrial_concern = {
+
+		MON_academy_of_science = {
+
+			picture = generic_electronics_concern_1
+
+			allowed = {
+				original_tag = MON
+			}
+
+			research_bonus = {
+				electronics = 0.15
+			}
+
+			traits = { electronics_concern }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		MON_Mongolbank = {
+
+			picture = generic_motorized_equipment_manufacturer_2
+
+			allowed = {
+				original_tag = MON
+			}
+
+			available = {
+				has_completed_focus = MON_transfer_the_funds_of_mongolbank
+			}
+
+			cost = 150
+
+			research_bonus = {
+				industry = 0.1
+			}
+			modifier = {
+				tank_manufacturer_cost_factor = -0.25
+				naval_manufacturer_cost_factor = -0.25
+				aircraft_manufacturer_cost_factor = -0.25
+				materiel_manufacturer_cost_factor = -0.25
+			}
+
+			traits = { industrial_concern }
+		}
+	}
 }
